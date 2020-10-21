@@ -104,6 +104,7 @@ public class NavigationMenu extends JFrame{
             CalculatorUI frame = new CalculatorUI();
             frame.setVisible(true);
         });
+
         mnPairShare.add(mntmSimpleCalc);
     }
 }
