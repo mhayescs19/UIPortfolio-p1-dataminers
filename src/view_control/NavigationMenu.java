@@ -34,30 +34,32 @@ public class NavigationMenu extends JFrame{
         });
     }
     public NavigationMenu() {
+        /*
+         * Sets up frame
+         */
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 600);
+        getContentPane().setLayout(null); // code declaration equivalent to GUI form layout
+        Container mainFrame = getContentPane();
+        mainFrame.setBackground(Color.decode("#6084A3")); // color of main frame
 
         // JLabel with image
-        JLabel homeSplashScreen = new JLabel("Period 1 Dataminers");
-        homeSplashScreen.setFont(new Font("Gilroy-ExtraBold", Font.PLAIN, 30));
+        JLabel homeSplashScreen = new JLabel("<HTML><center>Period 1 Dataminers<br>UI Portfolio</center><HTML>"); // HTML code to create a multi line label
+        homeSplashScreen.setFont(new Font("Gilroy-ExtraBold", Font.BOLD, 30));
         homeSplashScreen.setForeground(Color.WHITE);
-        homeSplashScreen.setBounds(900, 300, 100, 50);
+        homeSplashScreen.setBounds(290, 225, 900, 100);
         getContentPane().add(homeSplashScreen);
 
-        // Content Panel to add Label and Image
-        //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
-        Container content = getContentPane();
-        content.setBackground(Color.decode("#6084A3"));//9DAF9B
-
-
-        // Menu Objects
-        JMenuBar menuBar = new JMenuBar();
+        /*
+         * Sets up main menu objects in bar
+         */
+        JMenuBar menuBar = new JMenuBar(); // JMenuBar = main menu bar
         setJMenuBar(menuBar);
 
-        JMenu mnHone = new JMenu("Home");
+        JMenu mnHone = new JMenu("Home"); // JMenu = "columns" of menu bar
         menuBar.add(mnHone);
 
-        JMenuItem mntmPreferences = new JMenuItem("Preferences");
+        JMenuItem mntmPreferences = new JMenuItem("Preferences"); // JMenuItem = "rows" of menu bar
         mnHone.add(mntmPreferences);
 
         JMenuItem mntmConsole = new JMenuItem("Console");
@@ -89,22 +91,46 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmHangman = new JMenuItem("Hangman");
         mntmHangman.addActionListener(e -> {
-
+            HangmanUI frame = new HangmanUI();
+            frame.setVisible(true);
         });
         mnDemos.add(mntmHangman);
 
-        JMenu mnPairShare = new JMenu("Pair Share Labs");
+        /*
+         * Pair Share submenu
+         *
+         * Normal Menu                          Submenus
+         * JMenuBar                             JMenuBar
+         * JMenu       JMenu      JMenu         JMenu (with sub    JMenu(norm) JMenu
+         * JMenuItem   JMenuItem  JMenuItem     JMenu JMenuItem    JMenuItem   JMenuItem
+         *             JMenuItem                      JMenuItem    JMenuItem
+         *                                      JMenu JMenuItem
+         *                                            JMenuItem
+         */
+
+        JMenu mnPairShare = new JMenu("Pair Share Labs"); // "column" in main bar
         menuBar.add(mnPairShare);
 
-        JMenuItem mntmPeggHayes = new JMenuItem("Pegg, Hayes");
-        mnPairShare.add(mntmPeggHayes);
+        JMenu mnPeggHayes = new JMenu("Pegg, Hayes"); // "column" as a row under Pair Share "column"
+        mnPairShare.add(mnPeggHayes); // Why? normal "rows" under menu are created by JMenuItems
 
-        JMenuItem mntmSimpleCalc = new JMenuItem("Simple Calculator");
-        mntmSimpleCalc.addActionListener(e -> {
+
+        JMenuItem mntmSimpleCalcPH = new JMenuItem("Simple Calculator"); // first "row" under Pegg, Hayes submenu
+        mntmSimpleCalcPH.addActionListener(e -> {
             CalculatorUI frame = new CalculatorUI();
             frame.setVisible(true);
         });
+        mnPeggHayes.add(mntmSimpleCalcPH); // add to closet JMenu (acting as the row[Pegg, Hayes]) under JMenu [Pair Share}
 
-        mnPairShare.add(mntmSimpleCalc);
+        JMenu mnChangPhungRamsayer = new JMenu("Chang, Phung, Ramsayer");
+        mnPairShare.add(mnChangPhungRamsayer);
+
+        JMenuItem mntmSimpleCalcCPR = new JMenuItem("Simple Calculator");
+        mntmSimpleCalcCPR.addActionListener(e -> {
+            CalculatorUI frame = new CalculatorUI();
+            frame.setVisible(true);
+        });
+        mnPeggHayes.add(mntmSimpleCalcCPR);
+
     }
 }
