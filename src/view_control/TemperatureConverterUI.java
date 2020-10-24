@@ -4,14 +4,15 @@ import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class TemperatureConverterUI extends JFrame {
-    NumberFormatter digitsOnly = new NumberFormatter();
+    NumberFormatter digitsOnly = new NumberFormatter();//long list of swearwords on this subject
 
-    private final JTextArea field = new JTextArea("WHY GANDALF WHY");
-
+    private final JLabel field = new JLabel("Type the number you want converted here");
+    private void updateCalcArea(String text){
+        field.setText(text);
+    }
 
     public static void main(String[] args) {
         TemperatureConverterUI frame = new TemperatureConverterUI();
@@ -24,16 +25,21 @@ public class TemperatureConverterUI extends JFrame {
         setBounds(100, 100, 418, 340); // -25
         int offset = 25;
 
-
-        NumberFormatter digitsOnly = new NumberFormatter();
-        digitsOnly.setAllowsInvalid(false);
+        //NumberFormatter digitsOnly = new NumberFormatter();
+        //digitsOnly.setAllowsInvalid(false);
 
         setTitle("Temperature Converter");
         setSize(377,300);
         field.setBackground(Color.decode("#B4B4B4"));
         field.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-
+        field.setBounds(0, 0 , 368, 75);
         getContentPane().add(field);
+            field.addKeyListener(new KeyAdapter() {
+                @Override
+                public void keyPressed(KeyEvent e) {
+                    updateCalcArea("WHYYYY");
+                }
+            });
 
         JButton button_1 = new JButton("Celsius"); // text displayed on button
         button_1.addMouseListener(new MouseAdapter() {
@@ -47,6 +53,7 @@ public class TemperatureConverterUI extends JFrame {
             }
         });
         button_1.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
+        button_1.addActionListener(e -> updateCalcArea(button_1.getText()));
         button_1.setOpaque(true);
         button_1.setForeground(Color.WHITE);
         button_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
