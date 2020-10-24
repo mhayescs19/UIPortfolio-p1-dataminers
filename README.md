@@ -1,6 +1,7 @@
 # UIPortfolio-p1-dataminers
 ## How to Run
 * Run from Intellij Build/Run or in NavigationMenu.java
+* Navigation menu image: <a href="https://rtx.azurewebsites.net/6c8513f809acfe4b81a59eb7b6bea0c0.png">Link</a>. The menu is a hub with a file menu that opens our various programs.
 ## Self Grade and Code Blocks
 * Michael 5/5 
   * <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java">Control of Simple Calculator (Pair Share)</a> 
