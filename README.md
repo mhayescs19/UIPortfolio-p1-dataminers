@@ -15,3 +15,9 @@
 ## Project Updates
 ### Hangman Game (Michael)
 * Began creating UI, working to implement MVC once individual pair share calculator complete
+
+### Notepad (Dominic)
+* Main UI has been finished
+* File menu bar has been added
+* Added the following buttons (functionality has been added as well): open, save, and save as
+* Indicator to tell if a file has been edited (asterik next to the file's name on the window title)
