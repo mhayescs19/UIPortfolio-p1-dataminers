@@ -5,7 +5,7 @@
 ### Hangman Game (Michael)
 * Began creating UI, working to implement MVC once individual pair share calculator complete
 ## Self Grade and Code Blocks
-* Michael <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/hangman/src/view_control/HangmanUI.java">HangmanUI</a>
+* Michael 5/5 <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/hangman/src/view_control/HangmanUI.java">HangmanUI</a>
 *
 *
 *
