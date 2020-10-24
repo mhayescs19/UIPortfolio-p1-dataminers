@@ -70,30 +70,31 @@ public class NavigationMenu extends JFrame{
 
         JMenu mnDemos = new JMenu("Demos");
         menuBar.add(mnDemos);
-            JMenuItem mntmScientificCalc = new JMenuItem("Scientific Calculator");
-            mntmScientificCalc.addActionListener(e -> {
 
-            });
-            mnDemos.add(mntmScientificCalc);
+        JMenuItem mntmScientificCalc = new JMenuItem("Scientific Calculator");
+        mntmScientificCalc.addActionListener(e -> {
 
-            JMenuItem mntmNotePad = new JMenuItem("Notepad");
-            mntmNotePad.addActionListener(e -> {
+        });
+        mnDemos.add(mntmScientificCalc);
 
-            });
-            mnDemos.add(mntmNotePad);
+        JMenuItem mntmNotePad = new JMenuItem("Notepad");
+        mntmNotePad.addActionListener(e -> {
+            new notepad.NotepadGUI().setVisible(true);
+        });
+        mnDemos.add(mntmNotePad);
 
-            JMenuItem mntmTicTacToe = new JMenuItem("TicTacToe");
-            mntmTicTacToe.addActionListener(e -> {
+        JMenuItem mntmTicTacToe = new JMenuItem("TicTacToe");
+        mntmTicTacToe.addActionListener(e -> {
 
-            });
-            mnDemos.add(mntmTicTacToe);
+        });
+        mnDemos.add(mntmTicTacToe);
 
-            JMenuItem mntmHangman = new JMenuItem("Hangman");
-            mntmHangman.addActionListener(e -> {
+        JMenuItem mntmHangman = new JMenuItem("Hangman");
+        mntmHangman.addActionListener(e -> {
             HangmanUI frame = new HangmanUI();
             frame.setVisible(true);
-            });
-            mnDemos.add(mntmHangman);
+        });
+        mnDemos.add(mntmHangman);
 
         /*
          * Pair Share submenu
@@ -109,25 +110,35 @@ public class NavigationMenu extends JFrame{
 
         JMenu mnPairShare = new JMenu("Pair Share Labs"); // "column" in main bar
         menuBar.add(mnPairShare);
-            JMenu mnPeggHayes = new JMenu("Pegg, Hayes"); // "column" as a row under Pair Share "column"
-            mnPairShare.add(mnPeggHayes); // Why? normal "rows" under menu are created by JMenuItems
 
-                JMenuItem mntmSimpleCalcPH = new JMenuItem("Simple Calculator"); // first "row" under Pegg, Hayes submenu
-                mntmSimpleCalcPH.addActionListener(e -> {
-                    CalculatorUI frame = new CalculatorUI();
-                    frame.setVisible(true);
-                });
-                mnPeggHayes.add(mntmSimpleCalcPH); // add to closet JMenu (acting as the row[Pegg, Hayes]) under JMenu [Pair Share}
+        JMenu mnPeggHayes = new JMenu("Pegg, Hayes"); // "column" as a row under Pair Share "column"
+        mnPairShare.add(mnPeggHayes); // Why? normal "rows" under menu are created by JMenuItems
 
-            JMenu mnChangPhungRamsayer = new JMenu("Chang, Phung, Ramsayer");
-            mnPairShare.add(mnChangPhungRamsayer);
 
-                JMenuItem mntmSimpleCalcCPR = new JMenuItem("Simple Calculator");
-                mntmSimpleCalcCPR.addActionListener(e -> {
-                    CalculatorUI frame = new CalculatorUI();
-                    frame.setVisible(true);
-                });
-                mnPeggHayes.add(mntmSimpleCalcCPR);
+        JMenuItem mntmSimpleCalcPH = new JMenuItem("Simple Calculator"); // first "row" under Pegg, Hayes submenu
+        mntmSimpleCalcPH.addActionListener(e -> {
+            CalculatorUI frame = new CalculatorUI();
+            frame.setVisible(true);
+        });
+        mnPeggHayes.add(mntmSimpleCalcPH); // add to closet JMenu (acting as the row[Pegg, Hayes]) under JMenu [Pair Share}
 
+        JMenu mnChangPhungRamsayer = new JMenu("Chang, Phung, Ramsayer");
+        mnPairShare.add(mnChangPhungRamsayer);
+
+        JMenuItem mntmDominicCalc = new JMenuItem("Dominic's Calculator");
+        mntmDominicCalc.addActionListener(e -> new DominicCalculator().setVisible(true));
+        mnChangPhungRamsayer.add(mntmDominicCalc);
+
+        JMenuItem mntmJasonCalc = new JMenuItem("Jason's Calculator");
+        mntmJasonCalc.addActionListener(e -> {
+
+        });
+        mnChangPhungRamsayer.add(mntmJasonCalc);
+
+        JMenuItem mntmDavidCalc = new JMenuItem("David's Calculator");
+        mntmDavidCalc.addActionListener(e -> {
+
+        });
+        mnChangPhungRamsayer.add(mntmDavidCalc);
     }
 }
