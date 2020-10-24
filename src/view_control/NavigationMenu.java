@@ -79,7 +79,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmNotePad = new JMenuItem("Notepad");
         mntmNotePad.addActionListener(e -> {
-
+            new notepad.NotepadGUI().setVisible(true);
         });
         mnDemos.add(mntmNotePad);
 
@@ -125,12 +125,20 @@ public class NavigationMenu extends JFrame{
         JMenu mnChangPhungRamsayer = new JMenu("Chang, Phung, Ramsayer");
         mnPairShare.add(mnChangPhungRamsayer);
 
-        JMenuItem mntmSimpleCalcCPR = new JMenuItem("Simple Calculator");
-        mntmSimpleCalcCPR.addActionListener(e -> {
-            CalculatorUI frame = new CalculatorUI();
-            frame.setVisible(true);
-        });
-        mnPeggHayes.add(mntmSimpleCalcCPR);
+        JMenuItem mntmDominicCalc = new JMenuItem("Dominic's Calculator");
+        mntmDominicCalc.addActionListener(e -> new DominicCalculator().setVisible(true));
+        mnChangPhungRamsayer.add(mntmDominicCalc);
 
+        JMenuItem mntmJasonCalc = new JMenuItem("Jason's Calculator");
+        mntmJasonCalc.addActionListener(e -> {
+
+        });
+        mnChangPhungRamsayer.add(mntmJasonCalc);
+
+        JMenuItem mntmDavidCalc = new JMenuItem("David's Calculator");
+        mntmDavidCalc.addActionListener(e -> {
+
+        });
+        mnChangPhungRamsayer.add(mntmDavidCalc);
     }
 }
