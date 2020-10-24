@@ -8,6 +8,7 @@
 * Dominic
 * Jason
 * Andrew
+*  <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java"> Console based calcuator (Pair Share)</a> 
 * David
 ## Project Updates
 ### Hangman Game (Michael)
