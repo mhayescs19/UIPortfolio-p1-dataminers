@@ -13,6 +13,7 @@ public class TemperatureConverterUI extends JFrame {
 
     boolean number =false;
     boolean ReadyToConvert = false;
+    boolean decimal = false;
     private Conversions.TemperatureConversions Tconv;
     private double tempin;
     private double tempt;
@@ -85,10 +86,22 @@ public class TemperatureConverterUI extends JFrame {
                 break;
             }
             String currentS = field.getText();
-
-            field.setText(currentS + "-> "+Double.toString(tempF) +"° "+ text);
+            field.setText(currentS + "-> "+ tempF +"° "+ text);
             ReadyToConvert = false;
+            decimal = false;
+            number = false;
 
+        }
+        else{
+            if(number){
+                String currentString = field.getText();
+                field.setText(currentString + text);
+            }
+            else{
+                field.setText("");
+                field.setText(text);
+            }
+            //Create a new string, add it here
         }
     }
 
@@ -98,6 +111,25 @@ public class TemperatureConverterUI extends JFrame {
 
     }
     public TemperatureConverterUI(){
+        setFocusable(true);
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                System.out.println("Key Listener Works");
+                if (!ReadyToConvert) {
+                    if((e.getKeyCode() <= 105 && e.getKeyCode() >= 96) || (e.getKeyCode() <= 57 && e.getKeyCode() >= 48)){
+                        String temp = "" +e.getKeyChar();
+                        updateCalcArea(temp,0);
+                        number = true;
+                    }
+                    else if (!decimal &&(e.getKeyCode() == 190 || e.getKeyCode() == 110)){
+                        String temp = "" + e.getKeyChar();
+                        updateCalcArea(temp,0);
+                        decimal = true;
+                    }
+                }
+            }
+        });
         getContentPane().setBackground(Color.decode("#4C4C4C"));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -113,15 +145,7 @@ public class TemperatureConverterUI extends JFrame {
         field.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
         field.setBounds(0, 0 , 368, 75);
         getContentPane().add(field);
-            field.addKeyListener(new KeyAdapter() {
-                @Override
-                public void keyPressed(KeyEvent e) {
-                    if (!ReadyToConvert) {
-                        updateCalcArea("WHYYYY", 0);
-                        number = true;
-                    }
-                }
-            });
+        //Possible method: Filter text box after clicking, use text field, regex[a-zA-Z]
 
         JButton button_1 = new JButton("Celsius"); // text displayed on button
         button_1.addMouseListener(new MouseAdapter() {
