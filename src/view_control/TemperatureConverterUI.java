@@ -22,7 +22,20 @@ public class TemperatureConverterUI extends JFrame {
     private int op1;
     private int op2;
 
-
+    private void TypeNumbers(KeyEvent e){
+        if (!ReadyToConvert) {
+            if((e.getKeyCode() <= 105 && e.getKeyCode() >= 96) || (e.getKeyCode() <= 57 && e.getKeyCode() >= 48)){
+                String temp = "" +e.getKeyChar();
+                updateCalcArea(temp,0);
+                number = true;
+            }
+            else if (!decimal &&(e.getKeyCode() == 190 || e.getKeyCode() == 110)){
+                String temp = "" + e.getKeyChar();
+                updateCalcArea(temp,0);
+                decimal = true;
+            }
+        }
+    }
 
     NumberFormatter digitsOnly = new NumberFormatter();//long list of swearwords on this subject
 
@@ -69,7 +82,7 @@ public class TemperatureConverterUI extends JFrame {
                              break;
                         case 3:
                             tempt = Tconv.Temperature(tempin,TempConversions.FarenheitToCelsius);
-                            tempF = Tconv.Temperature(tempt, TempConversions.CelsiusToKelvin);
+                            tempF = Tconv.Temperature(tempt, TempConversions.CelsiusToKelvin);               
                             break;
                     }
                 break;
@@ -90,6 +103,7 @@ public class TemperatureConverterUI extends JFrame {
             ReadyToConvert = false;
             decimal = false;
             number = false;
+
 
         }
         else{
@@ -115,19 +129,7 @@ public class TemperatureConverterUI extends JFrame {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                System.out.println("Key Listener Works");
-                if (!ReadyToConvert) {
-                    if((e.getKeyCode() <= 105 && e.getKeyCode() >= 96) || (e.getKeyCode() <= 57 && e.getKeyCode() >= 48)){
-                        String temp = "" +e.getKeyChar();
-                        updateCalcArea(temp,0);
-                        number = true;
-                    }
-                    else if (!decimal &&(e.getKeyCode() == 190 || e.getKeyCode() == 110)){
-                        String temp = "" + e.getKeyChar();
-                        updateCalcArea(temp,0);
-                        decimal = true;
-                    }
-                }
+            TypeNumbers(e);
             }
         });
         getContentPane().setBackground(Color.decode("#4C4C4C"));
@@ -160,6 +162,12 @@ public class TemperatureConverterUI extends JFrame {
         });
         button_1.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
         button_1.addActionListener(e -> updateCalcArea(button_1.getText(),1));
+        button_1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                TypeNumbers(e);
+            }
+        });
         button_1.setOpaque(true);
         button_1.setForeground(Color.WHITE);
         button_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
@@ -180,6 +188,12 @@ public class TemperatureConverterUI extends JFrame {
         });
         button_2.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
         button_2.addActionListener(e -> updateCalcArea(button_2.getText(),2));
+        button_2.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                TypeNumbers(e);
+            }
+        });
         button_2.setOpaque(true);
         button_2.setForeground(Color.WHITE);
         button_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
@@ -200,6 +214,12 @@ public class TemperatureConverterUI extends JFrame {
         });
         button_3.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
         button_3.addActionListener(e -> updateCalcArea(button_3.getText(),3));
+        button_3.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                TypeNumbers(e);
+            }
+        });
         button_3.setOpaque(true);
         button_3.setForeground(Color.WHITE);
         button_3.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
