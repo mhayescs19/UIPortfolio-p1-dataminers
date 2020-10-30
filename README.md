@@ -3,6 +3,8 @@
 * Run from Intellij Build/Run or in NavigationMenu.java
 * Navigation menu image: <a href="https://rtx.azurewebsites.net/6c8513f809acfe4b81a59eb7b6bea0c0.png">Link</a>. The menu is a hub with a file menu that opens our various programs.
 
+## Self-Grades
+
 | Name | Self Grade | Code Blocks |
 | ------------- | ----------- | ----------- |
 |  Dominic (domph) |  |  |
