@@ -23,7 +23,8 @@
 ### Unit Converter (Jason)
 * 
 
-## Update History
+
+# Update History
 
 ## Week of Ocotober 23, 2020
 * Michael (mhayescs19) 5/5 
