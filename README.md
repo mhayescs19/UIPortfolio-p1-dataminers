@@ -6,7 +6,7 @@
 ## Self-Grades
 
 | Name | Self Grade (/20) | Scrum Leader Grade (/5) | Code Blocks |
-| ------------- | ----------- | ----------- | |
+| ------------- | ----------- | ----------- | ----------- |
 |  Dominic ([domph](https://github.com/domph)) |  |  | |
 |  Andrew (andrewcomputsci2019) |  |  | |
 |  Jason (dragon0344) |  |  | |
