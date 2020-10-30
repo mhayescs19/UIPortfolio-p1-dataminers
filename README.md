@@ -8,7 +8,7 @@
 |  Dominic (domph) |  |  |
 |  Andrew (andrewcomputsci2019) |  |  |
 |  Jason (dragon0344) |  |  |
-| Michael (mhayescs19) |  |  |
+| Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  |
 |  David (davidramsayer) |  |  |
 
 
