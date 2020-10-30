@@ -97,7 +97,7 @@ public class TicTacGUI extends JPanel
     public static void main(String[] args)
     {
         JFrame window = new JFrame("Tic Tac Toe");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         window.getContentPane().add(new TicTacGUI());
         window.setBounds(300,200,300,300);
         window.setVisible(true);

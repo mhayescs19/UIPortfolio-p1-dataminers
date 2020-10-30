@@ -85,7 +85,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmTicTacToe = new JMenuItem("TicTacToe");
         mntmTicTacToe.addActionListener(e -> {
-
+            TicTacGUI.main(null);
         });
         mnDemos.add(mntmTicTacToe);
 
