@@ -2,7 +2,28 @@
 ## How to Run
 * Run from Intellij Build/Run or in NavigationMenu.java
 * Navigation menu image: <a href="https://rtx.azurewebsites.net/6c8513f809acfe4b81a59eb7b6bea0c0.png">Link</a>. The menu is a hub with a file menu that opens our various programs.
-## Self Grade and Code Blocks
+
+| Name | Self Grade | Code Blocks |
+| ------------- | ----------- | ----------- |
+|  Dominic (domph) |  |  |
+|  Andrew (andrewcomputsci2019) |  |  |
+|  Jason (dragon0344) |  |  |
+| Michael (mhayescs19) |  |  |
+|  David (davidramsayer) |  |  |
+
+
+## Project Updates
+### Hangman Game (Michael)
+* 
+
+### Notepad (Dominic)
+* 
+### Unit Converter (Jason)
+* 
+
+## Update History
+
+## Week of Ocotober 23, 2020
 * Michael (mhayescs19) 5/5 
   * <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java">Control of Simple Calculator (Pair Share)</a> 
   * <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/hangman/src/view_control/HangmanUI.java">HangmanUI (Main project)</a> 
