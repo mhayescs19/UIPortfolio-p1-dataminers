@@ -7,7 +7,7 @@
 
 | Name | Self Grade (/20) | Scrum Leader Grade (/5) | Code Blocks |
 | ------------- | ----------- | ----------- | ----------- |
-|  Dominic ([domph](https://github.com/domph)) |  |  | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> <br> &nbsp;&nbsp; - Code links: <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/NotepadGUI.java">NotepadGUI (where most of the changes occurred)</a> <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/FileManager.java">FileManager (small change)</a>  |
+|  Dominic ([domph](https://github.com/domph)) |  |  | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> <br> &nbsp;&nbsp; - Code links: <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/NotepadGUI.java">NotepadGUI (where most of the changes occurred)</a>: some changes/additions include ZoomIn/ZoomOut functions, BottomPanel code and CreateBottomLabel function, window listener for window closing <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/FileManager.java">FileManager (small change)</a>  |
 |  Andrew (andrewcomputsci2019) |  |  | |
 |  Jason (dragon0344) |  |  | |
 | Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  | |
