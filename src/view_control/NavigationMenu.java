@@ -79,7 +79,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmNotePad = new JMenuItem("Notepad");
         mntmNotePad.addActionListener(e -> {
-            new notepad.NotepadGUI().setVisible(true);
+            new notepad.NotepadGUI();
         });
         mnDemos.add(mntmNotePad);
 
