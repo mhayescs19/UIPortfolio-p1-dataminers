@@ -7,7 +7,7 @@
 
 | Name | Self Grade | Code Blocks |
 | ------------- | ----------- | ----------- |
-|  Dominic (domph) |  |  |
+|  Dominic ([domph](https://github.com/domph) |  |  |
 |  Andrew (andrewcomputsci2019) |  |  |
 |  Jason (dragon0344) |  |  |
 | Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  |
@@ -19,7 +19,12 @@
 * 
 
 ### Notepad (Dominic)
-* 
+* Added zoom functionality
+ * Added View > Zoom file menu buttons (Zoom In and Zoom Out)
+ * Displays zoom percentage in the bottom bar
+ * Goes from 10% to 500%
+* Added a cursor tracker in the bottom bar (displays line and column) 
+
 ### Unit Converter (Jason)
 * 
 
