@@ -7,7 +7,7 @@
 
 | Name | Self Grade (/20) | Scrum Leader Grade (/5) | Code Blocks |
 | ------------- | ----------- | ----------- | ----------- |
-|  Dominic ([domph](https://github.com/domph)) |  |  | - Met project goals for notepad project (see list of completed goals below). <br>    - test |
+|  Dominic ([domph](https://github.com/domph)) |  |  | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp;&nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> |
 |  Andrew (andrewcomputsci2019) |  |  | |
 |  Jason (dragon0344) |  |  | |
 | Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  | |
