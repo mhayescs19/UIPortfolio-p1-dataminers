@@ -19,11 +19,13 @@
 * 
 
 ### Notepad (Dominic)
-* Added zoom functionality
+* Goal met: Added zoom functionality
   * Added View > Zoom file menu buttons (Zoom In and Zoom Out)
   * Displays zoom percentage in the bottom bar
   * Goes from 10% to 500%
-* Added a cursor tracker in the bottom bar (displays line and column) 
+* Goal met: Added a cursor tracker in the bottom bar (displays line and column) 
+* Goal met: Added a save prompt upon exiting notepad
+  * If a file has been edited but not saved, exiting the notepad will display a prompt to save/not save the file before closing.
 
 ### Unit Converter (Jason)
 * 
