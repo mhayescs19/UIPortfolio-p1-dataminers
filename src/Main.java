@@ -1,5 +1,4 @@
 import view_control.NavigationMenu;
-
 import javax.swing.*;
 
 public class Main {
