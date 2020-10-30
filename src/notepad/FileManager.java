@@ -8,7 +8,7 @@ import java.nio.file.Files;
 // Responsible solely for saving/writing to files
 public class FileManager {
 	public String FileName = "Untitled";
-	private File OpenedFile;
+	public File OpenedFile;
 	private final JFileChooser FileChooser = new JFileChooser();
 	private final NotepadGUI GUI;
 

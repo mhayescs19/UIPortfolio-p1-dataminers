@@ -1,9 +1,12 @@
 package notepad;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 // Manages all GUI-related components that are separate from actually saving/writing to the files
 public class NotepadGUI extends JFrame {
@@ -83,6 +86,40 @@ public class NotepadGUI extends JFrame {
 		return NewLabel;
 	}
 
+	/*
+	WIP
+
+	private void ShowSavePrompt() {
+		JFrame PromptGUI = new JFrame();
+		PromptGUI.setTitle("Notepad");
+		PromptGUI.setSize(300, 100);
+		setBackground(Color.WHITE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+		JPanel NewPanel = new JPanel();
+		NewPanel.setLayout(new BoxLayout(NewPanel, BoxLayout.Y_AXIS));
+		NewPanel.setBackground(Color.WHITE);
+		PromptGUI.add(NewPanel);
+
+		JLabel MessageLabel = new JLabel();
+		MessageLabel.setText("Do you want to save changes to " + (FM.OpenedFile != null ? FM.OpenedFile.getPath() : FM.FileName) + "?");
+		MessageLabel.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		MessageLabel.setForeground(new Color(0, 51, 153));
+		NewPanel.add(MessageLabel);
+
+		JPanel ButtonPanel = new JPanel();
+		ButtonPanel.setLayout(new BoxLayout(ButtonPanel, BoxLayout.X_AXIS));
+		ButtonPanel.setBackground(new Color(240, 240, 240));
+		ButtonPanel.setMinimumSize(new Dimension (600, 30));
+		ButtonPanel.setPreferredSize(new Dimension (600, 30));
+		ButtonPanel.setMaximumSize(new Dimension (Integer.MAX_VALUE, 30));
+		ButtonPanel.add(Box.createHorizontalGlue());
+		PromptGUI.add(ButtonPanel, BorderLayout.PAGE_END);
+
+		PromptGUI.setVisible(true);
+
+	}*/
+
 	public NotepadGUI() {
 		// Manages all file operations
 		FM = new FileManager(this);
@@ -90,7 +127,25 @@ public class NotepadGUI extends JFrame {
 		UpdateTitle();
 		setSize(600, 500);
 		setBackground(Color.WHITE);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				if (TextChanged) {
+					int Result = JOptionPane.showOptionDialog(null, "Do you want to save changes to " + (FM.OpenedFile != null ? FM.OpenedFile.getPath() : FM.FileName) + "?", "Notepad", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new String[]{"Save", "Don't Save", "Cancel"}, "Save");
+					switch (Result) {
+						case 0:
+							FM.SaveFile();
+						case 1:
+							dispose();
+					}
+					System.out.println("Done");
+				} else {
+					dispose();
+				}
+			}
+		});
 
 		// MainPanel: boxlayout top -> down
 		MainPanel = new JPanel();
