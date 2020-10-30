@@ -1,5 +1,7 @@
 package view_control;
 
+import control_hangman.Hangman;
+
 import java.awt.*;
 
 import javax.swing.ImageIcon;
@@ -91,8 +93,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmHangman = new JMenuItem("Hangman");
         mntmHangman.addActionListener(e -> {
-            HangmanUI frame = new HangmanUI();
-            frame.setVisible(true);
+            Hangman run = new Hangman(); // runs Hangman view control file
         });
         mnDemos.add(mntmHangman);
 
