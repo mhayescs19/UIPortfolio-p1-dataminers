@@ -20,6 +20,13 @@ import java.util.Random;
  * 2. click alphabet buttons to view console output of text (26 buttons created in a loop)
  */
 
+/**
+ * MODEL BRAINSTORM
+ * Current phrase
+ * Current guess
+ *
+ */
+
 public class HangmanUI extends JFrame {
     
     public static void main(String[] args) {
