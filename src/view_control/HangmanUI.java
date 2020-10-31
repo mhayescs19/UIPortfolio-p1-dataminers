@@ -13,19 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * HANGMAN
- * Current state
- * 1. click guess tester to cycle through hangman states
- * 2. click alphabet buttons to view console output of text (26 buttons created in a loop)
- */
-
-/**
- * MODEL BRAINSTORM
- * Current phrase
- * Current guess
- *
- */
 
 public class HangmanUI extends JFrame {
     
