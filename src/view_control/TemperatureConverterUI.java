@@ -5,6 +5,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.*;
+import java.lang.reflect.Array;
 
 import Conversions.TemperatureConversions.TempConversions;
 import Conversions.TemperatureConversions;
@@ -29,15 +30,49 @@ public class TemperatureConverterUI extends JFrame {
                 updateCalcArea(temp,0);
                 number = true;
             }
-            else if (!decimal &&(e.getKeyCode() == 190 || e.getKeyCode() == 110)){
-                String temp = "" + e.getKeyChar();
+            else if (!decimal && (e.getKeyCode() == 190 || e.getKeyCode() == 110)){
+                String temp = "." ;
                 updateCalcArea(temp,0);
                 decimal = true;
             }
+            else if ((e.getKeyCode() == 8)){
+                String temp = field.getText();
+                int length = temp.length();
+                String text;
+                if(length > 0) { text = temp.substring(0,(length-1));}
+                else
+                     text = "";
+                field.setText(text);
+            }
         }
     }
+    private void defineButton(JButton jbutton, int offset,int operation){
+        jbutton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                jbutton.setBackground(Color.decode("#9E9E9E"));
+            } // change color to get an interaction
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                jbutton.setBackground(Color.decode("#B4B4B4"));
+            }
+        });
+        jbutton.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
+        jbutton.addActionListener(e -> updateCalcArea(jbutton.getText(),operation));
+        jbutton.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                TypeNumbers(e);
+            }
+        });
+        jbutton.setOpaque(true);
+        jbutton.setForeground(Color.WHITE);
+        jbutton.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
+        jbutton.setBackground(Color.decode("#B4B4B4"));
+        jbutton.setBounds(0, 167 + offset, 368, 50);
+        getContentPane().add(jbutton);
+    }
 
-    NumberFormatter digitsOnly = new NumberFormatter();//long list of swearwords on this subject
 
     private final JLabel field = new JLabel("Type the number you want converted here");
     private void updateCalcArea(String text, int op){
@@ -82,7 +117,7 @@ public class TemperatureConverterUI extends JFrame {
                              break;
                         case 3:
                             tempt = Tconv.Temperature(tempin,TempConversions.FarenheitToCelsius);
-                            tempF = Tconv.Temperature(tempt, TempConversions.CelsiusToKelvin);               
+                            tempF = Tconv.Temperature(tempt, TempConversions.CelsiusToKelvin);
                             break;
                     }
                 break;
@@ -150,82 +185,13 @@ public class TemperatureConverterUI extends JFrame {
         //Possible method: Filter text box after clicking, use text field, regex[a-zA-Z]
 
         JButton button_1 = new JButton("Celsius"); // text displayed on button
-        button_1.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                button_1.setBackground(Color.decode("#9E9E9E"));
-            } // change color to get an interaction
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                button_1.setBackground(Color.decode("#B4B4B4"));
-            }
-        });
-        button_1.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-        button_1.addActionListener(e -> updateCalcArea(button_1.getText(),1));
-        button_1.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                TypeNumbers(e);
-            }
-        });
-        button_1.setOpaque(true);
-        button_1.setForeground(Color.WHITE);
-        button_1.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
-        button_1.setBackground(Color.decode("#B4B4B4"));
-        button_1.setBounds(0, 167 + offset, 368, 50);
-        getContentPane().add(button_1);
+        defineButton(button_1, offset,1);
 
         JButton button_2 = new JButton("Farenheit"); // text displayed on button
-        button_2.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                button_2.setBackground(Color.decode("#9E9E9E"));
-            } // change color to get an interaction
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                button_2.setBackground(Color.decode("#B4B4B4"));
-            }
-        });
-        button_2.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-        button_2.addActionListener(e -> updateCalcArea(button_2.getText(),2));
-        button_2.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                TypeNumbers(e);
-            }
-        });
-        button_2.setOpaque(true);
-        button_2.setForeground(Color.WHITE);
-        button_2.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
-        button_2.setBackground(Color.decode("#B4B4B4"));
-        button_2.setBounds(0, 117 + offset, 368, 50);
-        getContentPane().add(button_2);
+        defineButton(button_2 ,-25,2);
 
         JButton button_3 = new JButton("Kelvin"); // text displayed on button
-        button_3.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                button_3.setBackground(Color.decode("#9E9E9E"));
-            } // change color to get an interaction
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                button_3.setBackground(Color.decode("#B4B4B4"));
-            }
-        });
-        button_3.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-        button_3.addActionListener(e -> updateCalcArea(button_3.getText(),3));
-        button_3.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                TypeNumbers(e);
-            }
-        });
-        button_3.setOpaque(true);
-        button_3.setForeground(Color.WHITE);
-        button_3.setFont(new Font("Trebuchet MS", Font.PLAIN, 25));
-        button_3.setBackground(Color.decode("#B4B4B4"));
-        button_3.setBounds(0, 67 + offset, 368, 50);
-        getContentPane().add(button_3);
+        defineButton(button_3, -75,3);
     }
 
 
