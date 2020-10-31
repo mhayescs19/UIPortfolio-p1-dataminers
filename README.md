@@ -10,14 +10,11 @@
 |  Dominic ([domph](https://github.com/domph)) | 19/20 | 5/5 <br> ✓ achievement from week goals | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> <br> &nbsp;&nbsp; - Code links: <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/NotepadGUI.java">NotepadGUI (where most of the changes occurred)</a>: some changes/additions include ZoomIn/ZoomOut functions, BottomPanel code and CreateBottomLabel function, window listener for window closing <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/FileManager.java">FileManager (small change)</a>  |
 |  Andrew (andrewcomputsci2019) | 18/20 | 5/5 <br> ✓ achievement from week goals | Finished pairshare console base calcuator and is currnetly fully functional, <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java#L49">console method, small changes throught out file as well</a>. Ive also began my unit converter currently have a working ui and One working Unitconverion conversion method <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/UnitConverter/UnitUiForm.java#L3">UnitConverter</a>|
 |  Jason (dragon0344) | 18/20 | 5/5 <br> ✓ achievement from week goals | -Key listner now works, <br> &nbsp;&nbsp; - Code will now convert and functions effectively as a calculator <br> &nbsp;&nbsp; - Code <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/UnitConversion/src/view_control/TemperatureConverterUI.java">here</a> <br> &nbsp;&nbsp; -New code is in lines 26-74, 144-154 |
-| Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  | |
+| Michael ([mhayescs19](https://github.com/mhayescs19)) | 18/20 | 5/5 <br> ✓ achievement from week goals | - Current UI: [Link](https://drive.google.com/file/d/1z_B9yMbarmwa3vHOIiDvsiEZaVh3vjnT/view?usp=sharing) <br> - MVC created for Hangman |
 |  David (davidramsayer) |  |  | |
 
 
 ## Project Updates
-### Hangman Game (Michael)
-* 
-
 ### Notepad (Dominic)
 * Goal met: Added zoom functionality
   * Added View > Zoom file menu buttons (Zoom In and Zoom Out)
@@ -32,6 +29,13 @@
 * Backspace worked
 * Created a few methods that can probably be inherited.
 
+### Hangman Game (Michael) 
+##### (following Dominic's goal met format)
+* Goal met: MVC (hopefully correctly) implemented isolating model (phrase creation), control (checks guessed letters), view (creates 26 alphabet buttons, hangman icons, phrase display)
+* Goal met: added guessing letter functionality; now you can guess the phrase
+* TODO: 
+  * add different game states for replay (right now you can only guess on word)
+  * need to add functionality to punish the player for wrong letter guesses
 
 # Update History
 
