@@ -9,7 +9,7 @@
 | ------------- | ----------- | ----------- | ----------- |
 |  Dominic ([domph](https://github.com/domph)) |  |  | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> <br> &nbsp;&nbsp; - Code links: <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/NotepadGUI.java">NotepadGUI (where most of the changes occurred)</a>: some changes/additions include ZoomIn/ZoomOut functions, BottomPanel code and CreateBottomLabel function, window listener for window closing <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/FileManager.java">FileManager (small change)</a>  |
 |  Andrew (andrewcomputsci2019) |  |  | Finished pairshare console base calcuator and is currnetly fully functional, <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java#L49">console method, small changes throught out file as well</a>. Ive also began my unit converter currently have a working ui and One working Unitconverion conversion method <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/UnitConverter/UnitUiForm.java#L3">UnitConverter</a>|
-|  Jason (dragon0344) |  |  | |
+|  Jason (dragon0344) | 18/20 |  | |
 | Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  | |
 |  David (davidramsayer) |  |  | |
 
@@ -28,7 +28,9 @@
   * If a file has been edited but not saved, exiting the notepad will display a prompt to save/not save the file before closing.
 
 ### Unit Converter (Jason)
-* 
+* Got Key listner to work(finally)
+* Backspace worked
+* Created a few methods that can probably be inherited.
 
 
 # Update History
