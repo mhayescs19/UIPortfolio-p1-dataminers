@@ -11,7 +11,7 @@
 |  Andrew (andrewcomputsci2019) | 18/20 | 5/5 <br> ✓ achievement from week goals | Finished pairshare console base calcuator and is currnetly fully functional, <a href="https://github.com/mhayescs19/pegg-hayes-calculator-p1-dataminers/blob/master/src/view_control/CalculatorConsole.java#L49">console method, small changes throught out file as well</a>. Ive also began my unit converter currently have a working ui and One working Unitconverion conversion method <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/UnitConverter/UnitUiForm.java#L3">UnitConverter</a>|
 |  Jason (dragon0344) | 18/20 | 5/5 <br> ✓ achievement from week goals | -Key listner now works, <br> &nbsp;&nbsp; - Code will now convert and functions effectively as a calculator <br> &nbsp;&nbsp; - Code <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/UnitConversion/src/view_control/TemperatureConverterUI.java">here</a> <br> &nbsp;&nbsp; -New code is in lines 26-74, 144-154 |
 | Michael ([mhayescs19](https://github.com/mhayescs19)) |  |  | |
-|  David (davidramsayer) |  |  | |
+|  David ([davidramsayer](https://github.com/davidramsayer)) | 18/20 |  | -added both versions of Tic Tac Toe <br> &nbsp;&nbsp;&nbsp; -<a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/TicTacTerminal.java">terminal version</a> completely finished <br> &nbsp;&nbsp;&nbsp; -<a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/TicTacGUI.java">GUI version</a> is functional, but there are some problems with the game ending dialogue box that I want to find a new solution for. |
 
 
 ## Project Updates
