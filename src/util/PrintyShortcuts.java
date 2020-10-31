@@ -7,4 +7,7 @@ public class PrintyShortcuts {
     public static void println(String string) {
         System.out.println(string);
     }
+    public static String charToString(char[] ch) {
+        return new String(ch);
+    }
 }
