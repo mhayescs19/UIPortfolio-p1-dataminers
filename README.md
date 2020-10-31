@@ -34,7 +34,7 @@
 * Goal met: MVC (hopefully correctly) implemented isolating model (phrase creation), control (checks guessed letters), view (creates 26 alphabet buttons, hangman icons, phrase display)
 * Goal met: added guessing letter functionality; now you can guess the phrase
 * TODO: 
-  * add different game states for replay (right now you can only guess on word)
+  * add different game states for replay (right now you can only guess one word)
   * need to add functionality to punish the player for wrong letter guesses
 
 # Update History
