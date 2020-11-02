@@ -32,6 +32,18 @@ public class UnitControll {
         this.arg1 = this.arg1/12.0;
         return this.arg1;
     }
+    public double MeeterToCm()
+    {
+        this.arg1 = this.arg1*100.0;
+        return this.arg1;
+    }
+    public double CentimeterToMeeter()
+    {
+        this.arg1 = this.arg1/100.0;
+        return this.arg1;
+    }
+
+
 
 
 

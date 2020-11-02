@@ -19,8 +19,11 @@ public class UnitUiForm {
     private JButton cToFButton;
     private JButton CMToMeeterButton;
     private JButton fToCButton;
+    private boolean consolechecker;
+    private JLabel Console;
 
     public UnitUiForm() {
+        Console.setVisible(false);
         fToCButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -49,12 +52,16 @@ public class UnitUiForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                textareadouble = convert.MeeterToCm();
+                enterNumberHereTextArea.setText(Double.toString(textareadouble));
             }
         });
         CMToMeeterButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                textareadouble = convert.CentimeterToMeeter();
+                enterNumberHereTextArea.setText(Double.toString(textareadouble));
             }
         });
         cToFButton.addMouseListener(new MouseAdapter() {
@@ -87,12 +94,18 @@ public class UnitUiForm {
         convert.Arg1Setter(this.textareadouble);
         System.out.println("text registered");
     }
+
     catch (Exception e)
     {
         throw new NumberFormatException("do not use illegal characters, only . is allowed");
     }
 
     }
+public  void ConsoleUi()
+{
+    Console.setVisible(true);//adds a label that identifies when in console ui
+    //to be added
+}
 
  public static void FrameStart() {
      JFrame frame = new JFrame("UnitUiForm");
@@ -101,6 +114,7 @@ public class UnitUiForm {
      frame.setSize(800,400);
      frame.setLocation(1250,740);
      frame.setVisible(true);
+
  }
 
 
