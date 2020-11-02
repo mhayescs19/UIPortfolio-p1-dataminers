@@ -8,6 +8,7 @@ public class Hangman {
     public Phrase model;
     public HangmanUI view;
 
+    private boolean letterCorrect; // structure of tracking which letters remain
     /**
      * Control file constructor acts as a driver... activates model and view
      */
@@ -34,6 +35,7 @@ public class Hangman {
         }
         if (phraseUpdated == true){ // simple catch to avoid unnecessarily updating the blank phrase
             model.updatePhraseWithBlanks(phraseWithBlanks); // updates current model phrase with blanks to include correctly guess letters
+
         }
     }
 }

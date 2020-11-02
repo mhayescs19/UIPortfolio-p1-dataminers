@@ -1,6 +1,7 @@
 package view_control;
 
 import control_hangman.Hangman;
+import util.HangmanImage;
 import util.PrintyShortcuts;
 
 import javax.imageio.ImageIO;
@@ -39,18 +40,17 @@ public class HangmanUI extends JFrame {
     int i = 1;
 
     public void simulateGuess(JLabel image) {
-        hangmanImagePaths = new String[]{"src/images/hangman_initial.png", "src/images/hangman_guess1.png", "src/images/hangman_guess2.png", "src/images/hangman_guess3.png", "src/images/hangman_guess4.png", "src/images/hangman_guess5.png",  "src/images/hangman_full.png"};
         if (i == 7) {
             i = 0;
         }
-        ImageIcon currentHangmanState = new ImageIcon(hangmanImagePaths[i]);
+        ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[i]);
         image.setIcon(currentHangmanState);
-        PrintyShortcuts.println(hangmanImagePaths[i]);
+        PrintyShortcuts.println(HangmanImage.filePath[i]);
         i += 1;
     }
 
     public HangmanUI(Hangman control) {
-        /*
+        /**
          * Creates frame
          */
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -80,6 +80,7 @@ public class HangmanUI extends JFrame {
         int xCoordinate = 200; // starting x position of first alphabet button (a)
         int yCoordinate = 400; // starting y position of first alphabet button (a)
         int i = 0; // counter tracking number of buttons drawn on screen
+
         /* For loop explanation
          * 1. Cycle through entire alphabetButton array storing alphabet letters, creating a button for each letter
          * 2. Use variable "letter" to set corresponding letter to each button

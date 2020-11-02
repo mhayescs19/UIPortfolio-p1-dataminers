@@ -61,13 +61,13 @@ public class NavigationMenu extends JFrame{
         JMenu mnHone = new JMenu("Home"); // JMenu = "columns" of menu bar
         menuBar.add(mnHone);
 
-        JMenuItem mntmPreferences = new JMenuItem("Preferences"); // JMenuItem = "rows" of menu bar
+        JMenuItem mntmPreferences = new JMenuItem("Preferences WIP"); // JMenuItem = "rows" of menu bar
         mnHone.add(mntmPreferences);
 
-        JMenuItem mntmConsole = new JMenuItem("Console");
+        JMenuItem mntmConsole = new JMenuItem("Console WIP");
         mnHone.add(mntmConsole);
 
-        JMenuItem mntmUI = new JMenuItem("UI");
+        JMenuItem mntmUI = new JMenuItem("UI WIP");
         mnHone.add(mntmUI);
 
         JMenu mnDemos = new JMenu("Demos");
