@@ -28,7 +28,7 @@ public class Phrase {
     }
 
     public void createPhraseWithBlanks() {
-        displayedPhrase = convertPhrasetoBlanks();
+        this.displayedPhrase = convertPhrasetoBlanks();
     }
 
     public char[] getRandomPhrase() { // simple getter of random phrase
@@ -40,7 +40,7 @@ public class Phrase {
     }
 
     public void updatePhraseWithBlanks(char[] updatedPhrase) { // when a user guesses the correct letter, the phrase with blanks updates to add guesses letter to phrase
-        displayedPhrase = updatedPhrase;
+        this.displayedPhrase = updatedPhrase;
     }
 
     private String generateRandomPhrase() { // simple selection of a random phrase based on index
