@@ -25,18 +25,24 @@ public class UnitUiForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                textareadouble = convert.FtoC();
+                enterNumberHereTextArea.setText(Double.toString(textareadouble));
             }
         });
         inchesToFeetButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                textareadouble = convert.ItoF();
+                enterNumberHereTextArea.setText(Double.toString(textareadouble));
             }
         });
         feetInchesButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                textareadouble = convert.Ftoi();
+                enterNumberHereTextArea.setText(Double.toString(textareadouble));
             }
         });
         meeterToCentimeterButton.addMouseListener(new MouseAdapter() {

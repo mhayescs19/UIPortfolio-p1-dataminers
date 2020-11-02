@@ -24,12 +24,12 @@ public class UnitControll {
     }
     public double Ftoi()
     {
-        this.arg1 = this.arg1*12;
+        this.arg1 = this.arg1*12.0;
         return this.arg1;
     }
     public double ItoF()
     {
-        this.arg1 = this.arg1/12;
+        this.arg1 = this.arg1/12.0;
         return this.arg1;
     }
 
