@@ -19,8 +19,8 @@ public class UnitUiForm {
     private JButton cToFButton;
     private JButton CMToMeeterButton;
     private JButton fToCButton;
-    private boolean consolechecker;
     private JLabel Console;
+
 
     public UnitUiForm() {
         Console.setVisible(false);
@@ -29,7 +29,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 textareadouble = convert.FtoC();
-                enterNumberHereTextArea.setText(Double.toString(textareadouble));
+                SetText();
             }
         });
         inchesToFeetButton.addMouseListener(new MouseAdapter() {
@@ -37,7 +37,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 textareadouble = convert.ItoF();
-                enterNumberHereTextArea.setText(Double.toString(textareadouble));
+                SetText();
             }
         });
         feetInchesButton.addMouseListener(new MouseAdapter() {
@@ -45,7 +45,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 textareadouble = convert.Ftoi();
-                enterNumberHereTextArea.setText(Double.toString(textareadouble));
+                SetText();
             }
         });
         meeterToCentimeterButton.addMouseListener(new MouseAdapter() {
@@ -53,7 +53,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 textareadouble = convert.MeeterToCm();
-                enterNumberHereTextArea.setText(Double.toString(textareadouble));
+                SetText();
             }
         });
         CMToMeeterButton.addMouseListener(new MouseAdapter() {
@@ -61,7 +61,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 textareadouble = convert.CentimeterToMeeter();
-                enterNumberHereTextArea.setText(Double.toString(textareadouble));
+                SetText();
             }
         });
         cToFButton.addMouseListener(new MouseAdapter() {
@@ -69,7 +69,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                textareadouble = convert.CToF();
-               enterNumberHereTextArea.setText(Double.toString(textareadouble));
+               SetText();
             }
 
         });
@@ -81,8 +81,13 @@ public class UnitUiForm {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     TextAeraParse();
                 }
+                if(e.getKeyCode()==KeyEvent.VK_Z && e.isControlDown()) //cool key combo system that checks for control key is pressed
+                {
+                    ClearText();
+                }
             }
         });
+
     }
 
     public static void main(String[] args) {
@@ -101,10 +106,14 @@ public class UnitUiForm {
     }
 
     }
-public  void ConsoleUi()
+public void ConsoleUi()
 {
     Console.setVisible(true);//adds a label that identifies when in console ui
     //to be added
+}
+public void ClearText()
+{
+    enterNumberHereTextArea.setText("");
 }
 
  public static void FrameStart() {
@@ -115,6 +124,11 @@ public  void ConsoleUi()
      frame.setLocation(1250,740);
      frame.setVisible(true);
 
+ }
+ public void SetText()
+
+ {
+     enterNumberHereTextArea.setText(String.valueOf(textareadouble));
  }
 
 
