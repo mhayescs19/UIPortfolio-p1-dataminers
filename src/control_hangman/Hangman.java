@@ -1,6 +1,7 @@
 package control_hangman;
 
 import model_hangman.Phrase;
+import util.PrintyShortcuts;
 import view_control.HangmanUI;
 
 public class Hangman {
@@ -18,6 +19,10 @@ public class Hangman {
         view.setVisible(true);
     }
 
+    public String getCurrentPhraseForDisplay() { return PrintyShortcuts.charToString(this.model.getPhraseWithBlanks()); }
+
+    public boolean getPhraseState() { return model.getPhraseUpdated(); } // returns display ready phrase updated based on previous guess
+
     /**
      * Checks if the guessed letter is one or more of the letters in the phrase;
      * @param letter
@@ -25,17 +30,17 @@ public class Hangman {
     public void checkLetter(char letter) {
         char[] currentPhrase = model.getRandomPhrase();
         char[] phraseWithBlanks = model.getPhraseWithBlanks();
-        boolean phraseUpdated = false;
+        model.setPhraseUpdateState(false); // resets tracking when a player guesses a new letter
 
         for (int i = 0; i < currentPhrase.length; i++) {
            if (letter == currentPhrase[i]) {
                phraseWithBlanks[i] = letter; // adds current letter to blank phrase
-           phraseUpdated = true;
+               model.setPhraseUpdateState(true); // updates tracking boolean
            }
         }
-        if (phraseUpdated == true){ // simple catch to avoid unnecessarily updating the blank phrase
+        boolean phraseUpdated = model.getPhraseUpdated(); // assignment to local variable for clarity
+        if (phraseUpdated == true) { // simple catch to avoid unnecessarily updating the blank phrase
             model.updatePhraseWithBlanks(phraseWithBlanks); // updates current model phrase with blanks to include correctly guess letters
-
         }
     }
 }

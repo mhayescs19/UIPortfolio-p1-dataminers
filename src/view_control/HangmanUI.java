@@ -63,7 +63,7 @@ public class HangmanUI extends JFrame {
         /**
          * Phrase Display Label
          */
-        phraseLabel = new JLabel(PrintyShortcuts.charToString(control.model.getPhraseWithBlanks()));
+        phraseLabel = new JLabel(control.getCurrentPhraseForDisplay());
         phraseLabel.setBorder(new MatteBorder(1, 1, 1, 1, Color.decode("#9DAF9B")));
         phraseLabel.setOpaque(true);
         phraseLabel.setForeground(Color.decode("#2B425B"));
@@ -112,10 +112,11 @@ public class HangmanUI extends JFrame {
                 char currentLetter = new_button.getText().toLowerCase().charAt(0);
                 System.out.println(currentLetter);
                 control.checkLetter(currentLetter);
-
-                String updatedPhrase = PrintyShortcuts.charToString(control.model.getPhraseWithBlanks());
+                // visual text update of phrase
+                String updatedPhrase = control.getCurrentPhraseForDisplay();
                 phraseLabel.setText(updatedPhrase);
-
+                // visual update of button appearance and functionality (disabling interaction)
+                updateButtonAppearance(new_button, control.getPhraseState());
             });
             new_button.setBounds(190 + xCoordinate, yCoordinate, 30, 30);
             hangmanFrame.add(new_button);
@@ -156,7 +157,25 @@ public class HangmanUI extends JFrame {
 
     /**
      * UI Update Blocks
+     * updateButtonAppearance
+     * 1. Called after a letter is guessed
+     * 2. Updates button appearance to reflect a guess (button becomes static [button cannot be pressed])
+     * 3. Accuracy of guess either results in the button appearance shifting to red (incorrect) or green (correct)
      */
+    private void updateButtonAppearance(JButton alphabetButton, boolean correct) {
+        alphabetButton.setEnabled(false); // disables interaction with button
+
+        if (correct == true) {
+            alphabetButton.setBorder(new MatteBorder(1, 1, 1, 1, Color.decode("#3CB371")));
+            alphabetButton.setForeground(Color.decode("#2B425B"));
+            alphabetButton.setBackground(Color.decode("#3CB371"));
+        } else {
+            alphabetButton.setBorder(new MatteBorder(1, 1, 1, 1, Color.decode("#FA8072")));
+            alphabetButton.setForeground(Color.decode("#2B425B"));
+            alphabetButton.setBackground(Color.decode("#B22222"));
+        }
+
+    }
 
 }
 
