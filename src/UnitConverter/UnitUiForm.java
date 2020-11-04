@@ -129,6 +129,9 @@ public void ClearText()
 
  {
      enterNumberHereTextArea.setText(String.valueOf(textareadouble));
+     /*
+     method to set the label to value of the text area.
+     */
  }
 
 
