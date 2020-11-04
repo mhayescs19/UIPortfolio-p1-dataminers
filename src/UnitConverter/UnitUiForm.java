@@ -1,5 +1,10 @@
 package UnitConverter;
-
+/*
+Readme
+for the this converter to work you must enter in decimal number ie 1.0 or 512.123
+for all convert you must use enter to save the text, if you used an illegal character the program will throw an error in console telling you somthing went wrong.
+CTOF only works right now
+*/
 
 import javax.swing.*;
 import java.awt.*;
