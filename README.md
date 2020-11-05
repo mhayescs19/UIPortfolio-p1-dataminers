@@ -6,6 +6,7 @@
 * Project Contributors (contrib, github, journal), combine group grade, put any longer documents (prereq files) inside of a separate README
 * Add supplemental images to describe how project files work
 * Assests folder to store images to embed
+* TODO or done
 
 ## Self-Grades
 
