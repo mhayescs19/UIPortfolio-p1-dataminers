@@ -7,11 +7,11 @@ ctrl plus Z = clear text shortcut
 */
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 
 public class UnitUiForm {
     UnitControll convert = new UnitControll();
@@ -24,12 +24,12 @@ public class UnitUiForm {
     private JButton cToFButton;
     private JButton CMToMeeterButton;
     private JButton fToCButton;
-    private JLabel Console;
+
     private JButton consoleVersionButton;
 
 
     public UnitUiForm() {
-        Console.setVisible(false);
+
         fToCButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -98,6 +98,7 @@ public class UnitUiForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+
                 try {
                     ConsoleUi();
                 } catch (Exception exception) {
@@ -125,10 +126,7 @@ public class UnitUiForm {
     }
 public void ConsoleUi() throws Exception {
     UnitConsole var = new UnitConsole();
-    Console.setVisible(true);//adds a label that identifies when in console ui
-    //to be added
     var.ConsoleUi();
-    Console.setVisible(false);
 }
 public void ClearText()
 {
@@ -142,16 +140,16 @@ public void ClearText()
      frame.setSize(800,400);
      frame.setLocation(1250,740);
      frame.setVisible(true);
-
  }
  public void SetText()
-
  {
      enterNumberHereTextArea.setText(String.valueOf(textareadouble));
      /*
      method to set the label to value of the text area double.
      */
  }
+
+
 
 
 }

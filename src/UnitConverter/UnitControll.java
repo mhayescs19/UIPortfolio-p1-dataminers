@@ -44,16 +44,15 @@ public class UnitControll {
         return this.arg1;
     }
 
-    public double MethodCheck(Methods pass) throws Exception {
-        switch (pass) {
-            case CTOF: return CToF();
-            case FTOC: return FtoC();
-            case FTOI: return Ftoi();
-            case ITOF: return ItoF();
-            case CMTOM: return CentimeterToMeeter();
-            case MTOCM: return MeeterToCm();
-            default: throw new Exception("enum has not been set");
-        }
+    public double MethodCheck(Methods pass) {
+        return switch (pass) {
+            case CTOF -> CToF();
+            case FTOC -> FtoC();
+            case FTOI -> Ftoi();
+            case ITOF -> ItoF();
+            case CMTOM -> CentimeterToMeeter();
+            case MTOCM -> MeeterToCm();
+        };
     }
 
 
