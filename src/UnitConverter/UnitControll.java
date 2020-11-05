@@ -3,6 +3,7 @@ package UnitConverter;
 public class UnitControll {
 
     private double arg1;
+    public enum Methods {CTOF,FTOC,FTOI,ITOF,MTOCM,CMTOM,}
     public UnitControll()
     {
         arg1 = 0.0;
@@ -42,6 +43,19 @@ public class UnitControll {
         this.arg1 = this.arg1/100.0;
         return this.arg1;
     }
+
+    public double MethodCheck(Methods pass) throws Exception {
+        switch (pass) {
+            case CTOF: return CToF();
+            case FTOC: return FtoC();
+            case FTOI: return Ftoi();
+            case ITOF: return ItoF();
+            case CMTOM: return CentimeterToMeeter();
+            case MTOCM: return MeeterToCm();
+            default: throw new Exception("enum has not been set");
+        }
+    }
+
 
 
 

@@ -3,7 +3,7 @@ package UnitConverter;
 Readme
 for the this converter to work you must enter in decimal number ie 1.0 or 512.123
 for all convert you must use enter to save the text, if you used an illegal character the program will throw an error in console telling you somthing went wrong.
-CTOF only works right now
+ctrl plus Z = clear text shortcut
 */
 
 import javax.swing.*;
@@ -25,6 +25,7 @@ public class UnitUiForm {
     private JButton CMToMeeterButton;
     private JButton fToCButton;
     private JLabel Console;
+    private JButton consoleVersionButton;
 
 
     public UnitUiForm() {
@@ -93,6 +94,17 @@ public class UnitUiForm {
             }
         });
 
+        consoleVersionButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                try {
+                    ConsoleUi();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -111,10 +123,12 @@ public class UnitUiForm {
     }
 
     }
-public void ConsoleUi()
-{
+public void ConsoleUi() throws Exception {
+    UnitConsole var = new UnitConsole();
     Console.setVisible(true);//adds a label that identifies when in console ui
     //to be added
+    var.ConsoleUi();
+    Console.setVisible(false);
 }
 public void ClearText()
 {
@@ -135,7 +149,7 @@ public void ClearText()
  {
      enterNumberHereTextArea.setText(String.valueOf(textareadouble));
      /*
-     method to set the label to value of the text area.
+     method to set the label to value of the text area double.
      */
  }
 
