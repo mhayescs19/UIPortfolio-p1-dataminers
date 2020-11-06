@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UIPortfolio-p1-dataminers:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UIPortfolio_p1_dataminers_jar</output-path>
+    <root id="archive" name="UIPortfolio-p1-dataminers.jar">
+      <element id="module-output" name="UIPortfolio-p1-dataminers" />
+    </root>
+  </artifact>
+</component>
