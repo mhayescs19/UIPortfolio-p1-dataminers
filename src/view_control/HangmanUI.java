@@ -31,8 +31,8 @@ public class HangmanUI extends JFrame {
     /**
      * Real definitions
      */
-    JLabel phraseLabel = new JLabel();
-
+    private JLabel phraseLabel = new JLabel();
+    private JLabel hangmanDisplay;
     /**
      * Tester definitions
      */
@@ -117,6 +117,7 @@ public class HangmanUI extends JFrame {
                 phraseLabel.setText(updatedPhrase);
                 // visual update of button appearance and functionality (disabling interaction)
                 updateButtonAppearance(new_button, control.getPhraseState());
+                updateHangmanVisual(control, hangmanDisplay);
             });
             new_button.setBounds(190 + xCoordinate, yCoordinate, 30, 30);
             hangmanFrame.add(new_button);
@@ -128,7 +129,7 @@ public class HangmanUI extends JFrame {
          * 1. GOAL= practice switching icons of labels triggered by buttons
          */
         ImageIcon image = new ImageIcon("src/images/hangman_initial.png");
-        JLabel hangmanDisplay = new JLabel(image);
+        hangmanDisplay = new JLabel(image);
         hangmanDisplay.setBounds(-10, -2, 400, 600);
         hangmanFrame.add(hangmanDisplay);
 
@@ -152,7 +153,6 @@ public class HangmanUI extends JFrame {
         button_sim_guess.addActionListener(e -> simulateGuess(hangmanDisplay)); // test to check button values
         button_sim_guess.setBounds(600, 350, 100, 20);
         hangmanFrame.add(button_sim_guess);
-
     }
 
     /**
@@ -175,6 +175,12 @@ public class HangmanUI extends JFrame {
             alphabetButton.setBackground(Color.decode("#B22222"));
         }
 
+    }
+
+    private void updateHangmanVisual(Hangman control, JLabel hangmanDisplay) {
+        int hangmanImageIndex = 5 - control.getGuessesRemaining(); // array size of image icons = 5, subtract current guesses remaining to get proper array index... possible place for stack use?
+        ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[hangmanImageIndex]);
+        hangmanDisplay.setIcon(currentHangmanState);
     }
 
 }
