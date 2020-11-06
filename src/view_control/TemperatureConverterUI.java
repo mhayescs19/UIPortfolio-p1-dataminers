@@ -10,7 +10,7 @@ import java.lang.reflect.Array;
 import Conversions.TemperatureConversions.TempConversions;
 import Conversions.TemperatureConversions;
 
-public class TemperatureConverterUI extends JFrame {
+public class TemperatureConverterUI extends UIBase {
 
     boolean number =false;
     boolean ReadyToConvert = false;
@@ -23,7 +23,7 @@ public class TemperatureConverterUI extends JFrame {
     private int op1;
     private int op2;
 
-    private void TypeNumbers(KeyEvent e){
+    /*void TypeNumbers(KeyEvent e){
         if (!ReadyToConvert) {
             if((e.getKeyCode() <= 105 && e.getKeyCode() >= 96) || (e.getKeyCode() <= 57 && e.getKeyCode() >= 48)){
                 String temp = "" +e.getKeyChar();
@@ -46,7 +46,7 @@ public class TemperatureConverterUI extends JFrame {
             }
         }
     }
-    private void defineButton(JButton jbutton, int offset,int operation){
+    void defineButton(JButton jbutton, int offset,int operation){
         jbutton.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -71,7 +71,7 @@ public class TemperatureConverterUI extends JFrame {
         jbutton.setBackground(Color.decode("#B4B4B4"));
         jbutton.setBounds(0, 167 + offset, 368, 50);
         getContentPane().add(jbutton);
-    }
+    }*/
 
 
     private final JLabel field = new JLabel("Type the number you want converted here");
@@ -164,7 +164,11 @@ public class TemperatureConverterUI extends JFrame {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-            TypeNumbers(e);
+            int pass = TypeNumbers(e,ReadyToConvert, decimal,number,field);
+            if (pass == 1)
+                number = true;
+            else if (pass == 2)
+                decimal = true;
             }
         });
         getContentPane().setBackground(Color.decode("#4C4C4C"));
@@ -185,13 +189,20 @@ public class TemperatureConverterUI extends JFrame {
         //Possible method: Filter text box after clicking, use text field, regex[a-zA-Z]
 
         JButton button_1 = new JButton("Celsius"); // text displayed on button
-        defineButton(button_1, offset,1);
+        defineButton(button_1, offset,1, 1,1,ReadyToConvert, decimal,number,field);
+        button_1.addActionListener(e -> updateCalcArea(button_1.getText(),1));
 
         JButton button_2 = new JButton("Farenheit"); // text displayed on button
-        defineButton(button_2 ,-25,2);
+        defineButton(button_2 ,-25,2,1,1, ReadyToConvert, decimal,number,field);
+        button_2.addActionListener(e -> updateCalcArea(button_2.getText(),2));
+        button_2.addActionListener(e-> requestFocus());
+
 
         JButton button_3 = new JButton("Kelvin"); // text displayed on button
-        defineButton(button_3, -75,3);
+        defineButton(button_3, -75,3, 1,1,ReadyToConvert, decimal,number,field);
+        button_3.addActionListener(e -> updateCalcArea(button_3.getText(),3));
+        button_3.addActionListener(e-> requestFocus());
+
     }
 
 
