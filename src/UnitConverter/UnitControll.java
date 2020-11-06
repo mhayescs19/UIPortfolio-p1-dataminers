@@ -54,6 +54,10 @@ public class UnitControll {
             case MTOCM -> MeeterToCm();
         };
     }
+    public void ConsoleUi() throws Exception { // starts the console version converter
+        UnitConsole var = new UnitConsole();
+        var.ConsoleUi();
+    }
 
 
 

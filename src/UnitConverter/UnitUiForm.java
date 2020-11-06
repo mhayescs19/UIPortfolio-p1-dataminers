@@ -75,7 +75,7 @@ public class UnitUiForm {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                textareadouble = convert.CToF();
-               SetText();
+               SetText(); // sets the text of the text area
             }
 
         });
@@ -98,12 +98,12 @@ public class UnitUiForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
                 try {
-                    ConsoleUi();
+                    convert.ConsoleUi();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
+
             }
         });
     }
@@ -111,7 +111,7 @@ public class UnitUiForm {
     public static void main(String[] args) {
       FrameStart();
     }
-    public void TextAeraParse()
+    public void TextAeraParse() // grabs the string of the text area
     {   try {
         this.textareadouble = Double.parseDouble(enterNumberHereTextArea.getText());
         convert.Arg1Setter(this.textareadouble);
@@ -124,14 +124,11 @@ public class UnitUiForm {
     }
 
     }
-public void ConsoleUi() throws Exception {
-    UnitConsole var = new UnitConsole();
-    var.ConsoleUi();
-}
+
 public void ClearText()
 {
     enterNumberHereTextArea.setText("");
-}
+} //clears the text
 
  public static void FrameStart() {
      JFrame frame = new JFrame("UnitUiForm");
