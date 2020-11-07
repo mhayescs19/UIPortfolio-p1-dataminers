@@ -19,6 +19,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 		this.Model = Model;
 		this.View = View;
 
+		// Listener methods are declare in the class (see below)
 		View.AddGlobalActionListener(this);
 		View.AddDocumentListener(this);
 		View.AddWindowListener(this);
@@ -29,7 +30,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 		View.setTitle((TextChanged ? "*" : "") + (OpenedFile == null ? "Untitled" : OpenedFile.getName()) + " - Notepad");
 	}
 
-	// Writes to DestinationFile is not null; otherwise, prompts using View's method
+	// Writes to DestinationFile if not null; otherwise, prompts using View's method
 	private void SaveToFile(File DestinationFile) {
 		boolean Success;
 		if (DestinationFile != null) {
@@ -67,6 +68,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 		}
 	}
 
+	// Code for all menu items; connects View & Model
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
@@ -94,6 +96,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 		}
 	}
 
+	// These methods are called when the textbox is updated (need to keep track of when the file has been edited)
 	@Override
 	public void insertUpdate(DocumentEvent e) {
 		TextChanged = true;

@@ -24,6 +24,7 @@ public class NotepadView extends JFrame {
 	private final int MIN_ZOOM_PERCENT = 10;
 	private final int DEFAULT_FONT_SIZE = 14;
 
+	//-- Data variables
 	private int ZoomValue = 100;
 
 	//-- GUI Components
@@ -40,7 +41,7 @@ public class NotepadView extends JFrame {
 		ConfigureWindow();
 		InitializeComponents();
 		AddViewListeners();
-		setVisible(true);
+		setVisible(true);	// setvisible at the end
 
 		FileChooser = new JFileChooser();
 		FileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -89,6 +90,7 @@ public class NotepadView extends JFrame {
 		BottomPanel.setVisible(StatusBarCheckBox.getState());
 	}
 
+	// These are called in the Controller; provide connection between the two
 	public void AddGlobalActionListener(ActionListener AL) {
 		for (JMenuItem MenuItem : MenuItems) {
 			MenuItem.addActionListener(AL);
@@ -137,7 +139,6 @@ public class NotepadView extends JFrame {
 		TextInput = new JTextArea();
 		TextInput.setBorder(BorderFactory.createCompoundBorder(TextInput.getBorder(), BorderFactory.createEmptyBorder(0, 2, 0, 2))); // 2 px padding for the text in the textarea
 		TextInput.setFont(new Font("Consolas", Font.PLAIN, DEFAULT_FONT_SIZE));	// Default - will be customizable soon
-		//MainPanel.add(TextInput);
 
 		JScrollPane ScrollPane = new JScrollPane(TextInput, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		ScrollPane.setBorder(BorderFactory.createEmptyBorder());
@@ -166,12 +167,14 @@ public class NotepadView extends JFrame {
 		JMenu ViewMenu = CreateMenu(MenuBar, "View");
 		JMenu ZoomTab = CreateMenu(ViewMenu, "Zoom");
 
+		// Add the various file menu items w/ keybinds if necessary
 		CreateMenuItem(FileMenu, "Open", KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK, KeyEvent.VK_O, new int[][]{});
 		CreateMenuItem(FileMenu, "Save", KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK, KeyEvent.VK_S, new int[][]{});
 		CreateMenuItem(FileMenu, "Save As", KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK, 0, new int[][]{});
 		FileMenu.addSeparator();
 		CreateMenuItem(FileMenu, "Exit", 0, 0, 0, new int[][]{});
 
+		// Special menu item (checkbox); does not use the standard function
 		StatusBarCheckBox = new JCheckBoxMenuItem("Status Bar");
 		StatusBarCheckBox.setState(true);
 		MenuItems.add(StatusBarCheckBox);
@@ -195,18 +198,21 @@ public class NotepadView extends JFrame {
 		return NewMenu;
 	}
 
+	// KeyShortcut & Modifiers are optional parameters to specify the main keybinds (these show up in the file menu item); AdditionalShortcuts can be provided -- these are not the ones shown up in the file menu item though
 	private JMenuItem CreateMenuItem(JMenu Parent, String Name, int KeyShortcut, int Modifiers, int Mnemonic, int[][] AdditionalShortcuts) {
 		JMenuItem NewMenuItem = new JMenuItem(Name);
 		if (KeyShortcut != 0) {
 			NewMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyShortcut, Modifiers));
 		}
 		for (int[] KeyData : AdditionalShortcuts) {
+			// Additional shortcuts require extra code
 			if (KeyData.length == 2) {
 				KeyStroke KS = KeyStroke.getKeyStroke(KeyData[0], KeyData[1]);
 				NewMenuItem.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KS, KS.toString());
 				NewMenuItem.getActionMap().put(KS.toString(), new AbstractAction() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
+						// Hook it up to the main action listener; copy over the event source and ID but change the name
 						NewMenuItem.getActionListeners()[0].actionPerformed(new ActionEvent(e.getSource(), e.getID(), Name));
 					}
 				});
@@ -216,7 +222,7 @@ public class NotepadView extends JFrame {
 			NewMenuItem.setMnemonic(Mnemonic);
 		}
 		Parent.add(NewMenuItem);
-		MenuItems.add(NewMenuItem);
+		MenuItems.add(NewMenuItem);	// Register this button to be added to the Controller's ActionListener
 		return NewMenuItem;
 	}
 
@@ -232,7 +238,7 @@ public class NotepadView extends JFrame {
 		return NewLabel;
 	}
 
-	// Listeners independent of Model/Control
+	// Listeners independent of Model/Control (aka View only)
 	private void AddViewListeners() {
 		TextInput.addCaretListener(e -> {
 			int CaretPosition = e.getDot();

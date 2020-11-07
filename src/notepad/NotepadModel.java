@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.file.Files;
 
 public class NotepadModel {
-	public Exception LastException;
+	public Exception LastException;	// For error reporting of ReadFile and WriteFile calls
 
 	public String ReadFile(File Source) {
 		try {
