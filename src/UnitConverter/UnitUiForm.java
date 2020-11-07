@@ -2,8 +2,9 @@ package UnitConverter;
 /*
 Readme
 for the this converter to work you must enter in decimal number ie 1.0 or 512.123
-for all convert you must use enter to save the text, if you used an illegal character the program will throw an error in console telling you somthing went wrong.
+for all convert you must use enter to save the text, if you used an illegal character the program will throw an error in console telling you something went wrong.
 ctrl plus Z = clear text shortcut
+Console button will launch the console version of the converter.
 */
 
 import javax.swing.*;
