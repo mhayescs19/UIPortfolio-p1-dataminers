@@ -16,15 +16,15 @@ public class Phrase {
 
     }
 
-    public Phrase() { // when the game starts there always needs to be a phrase to guess
-        createRandomPhrase();
+    public Phrase(String phrase) { // when the game starts there always needs to be a phrase to guess
+        createPhrase(phrase);
         createPhraseWithBlanks();
         PrintyShortcuts.println(PrintyShortcuts.charToString(currentPhrase));
         PrintyShortcuts.println(PrintyShortcuts.charToString(displayedPhrase));
     }
 
-    public void createRandomPhrase() { // pulls random phrase from master array into a char array
-        currentPhrase = generateRandomPhrase().toCharArray();
+    public void createPhrase(String phrase) { // pulls random phrase from master array into a char array
+        currentPhrase = phrase.toCharArray();
         PrintyShortcuts.println(PrintyShortcuts.charToString(currentPhrase));
     }
 
@@ -46,17 +46,6 @@ public class Phrase {
 
     public boolean getPhraseUpdated() { return this.phraseUpdated; }
 
-    private String generateRandomPhrase() { // simple selection of a random phrase based on index
-        Random randomizer = new Random();
-        int bound = masterPhraseList.length;
-        int i = randomizer.nextInt(bound);
-
-        String randomPhrase = masterPhraseList[i];
-
-        PrintyShortcuts.println(randomPhrase);
-        return randomPhrase;
-
-    }
     private char[] convertPhrasetoBlanks() { // converts current phrase to a displayable char array with blanks for the view
          char[] tempPhraseWithBlanks = new char[currentPhrase.length];
          for (int i = 0; i < currentPhrase.length; i++) {
@@ -68,4 +57,19 @@ public class Phrase {
          }
          return tempPhraseWithBlanks;
     }
+
+    /**
+     * Deprecated
+     */
+    /*private String generateRandomPhrase() { // simple selection of a random phrase based on index
+        Random randomizer = new Random();
+        int bound = masterPhraseList.length;
+        int i = randomizer.nextInt(bound);
+
+        String randomPhrase = masterPhraseList[i];
+
+        PrintyShortcuts.println(randomPhrase);
+        return randomPhrase;
+
+    }*/
 }
