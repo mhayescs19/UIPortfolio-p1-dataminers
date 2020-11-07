@@ -37,6 +37,8 @@ public class Hangman {
     public boolean getPhraseState() { return model.getPhraseUpdated(); } // returns display ready phrase updated based on previous guess
 
     public int getGuessesRemaining() { return this.guessesRemaining; }
+
+    public Phrase startNextRound() { return this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop())); } // when the game is over, a new phrase is create to guess
     /**
      * Checks if the guessed letter is one or more of the letters in the phrase;
      * @param letter
