@@ -193,7 +193,7 @@ public class HangmanUI extends JFrame {
         hangmanDisplay.setIcon(image);
         // fires off code in MVC to set up new phrase
         control.startNextRound();
-        // updates visual of phrase
+        // updates visual of phrase in UI
         String updatedPhrase = control.getCurrentPhraseForDisplay();
         phraseLabel.setText(updatedPhrase);
     }
