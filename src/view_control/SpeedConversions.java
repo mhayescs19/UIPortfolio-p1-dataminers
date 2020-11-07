@@ -11,12 +11,13 @@ import Conversions.SpeedConversionMath;
 import Conversions.SpeedConversionMath.SpdConversion;
 
 public class SpeedConversions extends UIBase {
-
+        //Defines all the variables that should be used
         boolean number =false;
         boolean ReadyToConvert = false;
         boolean decimal = false;
         private SpeedConversionMath Spconv;
         private double speedIn;
+        //Variable below is just a temporary placeholder
         private double speedT;
 
         private double speedF;
@@ -25,8 +26,9 @@ public class SpeedConversions extends UIBase {
 
 
 
-
+        //Defines Jlabel
         private final JLabel field = new JLabel("Type the number you want converted here");
+        //Updates the label that is going to be shown
         private void updateCalcArea(String text, int op){
             if (op >= 1 && !ReadyToConvert){
                 if(!number) {
@@ -48,6 +50,8 @@ public class SpeedConversions extends UIBase {
                     speedF = speedIn;
                 }
                 else {
+
+                    //Will not explain all of the switch cases, but this should choose and convert all of the units to the selected one
                     switch (op1) {
                         case 1:
                             switch (op2) {
@@ -108,32 +112,32 @@ public class SpeedConversions extends UIBase {
                                 case 5:
                                     speedT = Spconv.Speed((1f/speedIn), SpdConversion.KphtoKnots);
                                     speedF = 1f/(Spconv.Speed(speedT, SpdConversion.FeetperSecondtoKph));
-
                                     break;
                             }
                             break;
                         case 4:
                             switch (op2) {
                                 case 1:
-                                    speedT = Spconv.Speed((1f/speedIn), SpdConversion.MphtoMeterPerSecond);
-                                    speedF = 1f/speedT;
+                                    speedT = Spconv.Speed((1.0/speedIn), SpdConversion.MphtoMeterPerSecond);
+                                    speedF = 1f / speedT;
                                     break;
                                 case 2:
                                     speedT = Spconv.Speed((1f/speedIn), SpdConversion.KphtoMetersPerSecond);
-                                    speedF = 1f / speedT;
+                                    speedF = 1f/speedT;
                                     break;
                                 case 3:
                                     speedT = Spconv.Speed((1f/speedIn), SpdConversion.MphtoMeterPerSecond);
-                                    speedF = Spconv.Speed((1 / speedT), SpdConversion.MphtoKnot);
+                                    speedF = Spconv.Speed((1f/speedT), SpdConversion.MphtoKnot);
                                     break;
                                 case 4:
                                     speedF = speedIn;
                                     break;
                                 case 5:
                                     speedT = Spconv.Speed((1f/speedIn), SpdConversion.MphtoMeterPerSecond);
-                                    speedF = Spconv.Speed((1f/ speedT), SpdConversion.MphtoFps);
+                                    speedF = Spconv.Speed((1f/speedT), SpdConversion.MphtoFps);
                                     break;
                             }
+                            break;
                         case 5:
                             switch (op2) {
                                 case 1:
@@ -155,10 +159,12 @@ public class SpeedConversions extends UIBase {
                                     break;
                             }
 
+
                     }
                 }
+                //Sets conversion in label
                 String currentS = field.getText();
-                field.setText(currentS + "-> "+ speedF + text);
+                field.setText(currentS + "-> "+ speedF + " " + text);
                 ReadyToConvert = false;
                 decimal = false;
                 number = false;
@@ -166,6 +172,7 @@ public class SpeedConversions extends UIBase {
 
             }
             else{
+                //creates an alternative for when player inputs information
                 if(number){
                     String currentString = field.getText();
                     field.setText(currentString + text);
@@ -177,13 +184,15 @@ public class SpeedConversions extends UIBase {
                 //Create a new string, add it here
             }
         }
-
+        //opens it up.
         public static void main(String[] args) {
             view_control.SpeedConversions frame = new view_control.SpeedConversions();
             frame.setVisible(true);
 
         }
+
         public SpeedConversions(){
+            //Let's you focus on certain object(let's key listener work)
             setFocusable(true);
             addKeyListener(new KeyAdapter() {
                 @Override
