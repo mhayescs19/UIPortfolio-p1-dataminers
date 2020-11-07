@@ -1,28 +1,10 @@
 package view_control;
 
+import UnitConverter.UnitUiForm;
 import control_hangman.Hangman;
 
-import java.awt.*;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
-import javax.swing.border.StrokeBorder;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.font.TextAttribute;
-import java.text.AttributedCharacterIterator;
-import java.text.AttributedString;
 
 public class NavigationMenu extends JFrame{
     public static void main(String[] args) {
@@ -96,6 +78,11 @@ public class NavigationMenu extends JFrame{
             Hangman run = new Hangman(); // runs Hangman view control file
         });
         mnDemos.add(mntmHangman);
+        JMenuItem mntmUnitconverter = new JMenuItem("Unit converter");
+        mntmUnitconverter.addActionListener(e->{
+            UnitUiForm.FrameStart();
+        });
+        mnDemos.add(mntmUnitconverter);
 
         /*
          * Pair Share submenu
