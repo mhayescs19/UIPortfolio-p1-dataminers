@@ -1,7 +1,17 @@
+/*
+
+    Created by p1Dataminers
+    2020
+
+ */
+
 package view_control;
 
 import UnitConverter.UnitUiForm;
+import control_calculator.Calculate;
 import control_hangman.Hangman;
+import notepad.NotepadModel;
+import notepad.NotepadView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,7 +73,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmNotePad = new JMenuItem("Notepad");
         mntmNotePad.addActionListener(e -> {
-            new notepad.NotepadGUI();
+            new notepad.NotepadController(new NotepadModel(), new NotepadView());
         });
         mnDemos.add(mntmNotePad);
 
@@ -105,8 +115,7 @@ public class NavigationMenu extends JFrame{
 
         JMenuItem mntmSimpleCalcPH = new JMenuItem("Simple Calculator"); // first "row" under Pegg, Hayes submenu
         mntmSimpleCalcPH.addActionListener(e -> {
-            CalculatorUI frame = new CalculatorUI();
-            frame.setVisible(true);
+            new Calculate();
         });
         mnPeggHayes.add(mntmSimpleCalcPH); // add to closet JMenu (acting as the row[Pegg, Hayes]) under JMenu [Pair Share}
 
