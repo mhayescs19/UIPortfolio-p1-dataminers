@@ -1,28 +1,35 @@
-package util;
+/*
 
+    Created by Michael Hayes and Andrew Pegg
+    2020
+
+ */
+
+package util;
 
 import static java.lang.Math.*;
 
 public class Operation {
-	
+
 	public static enum OPERATOR { NOOP, PLUS, MINUS, DIVIDE, MULTIPLY, LOGy, LOG, POWERy, ACOSIN, ASIN, SQ, SQRT, SQRTy,POSNEG, FRACTION}
 	public static double calculateIt(double arg1, OPERATOR mathOp, double arg2) {
-		
-		double calcAnswer;		
+
+		double calcAnswer;
 		switch(mathOp)
-	    {
-	        case PLUS:
-	            calcAnswer = arg1 + arg2;
-	            break;
-	        case MINUS:
-	            calcAnswer = arg1 - arg2;
-	            break;
-	        case DIVIDE:
-	            calcAnswer = arg1 / arg2;
-	            break;
-	        case MULTIPLY:
-	            calcAnswer = arg1 * arg2;
-	            break;
+		{
+			case PLUS:
+				calcAnswer = arg1 + arg2;
+
+				break;
+			case MINUS:
+				calcAnswer = arg1 - arg2;
+				break;
+			case DIVIDE:
+				calcAnswer = arg1 / arg2;
+				break;
+			case MULTIPLY:
+				calcAnswer = arg1 * arg2;
+				break;
 			case LOGy:
 				calcAnswer = log(arg2) / log(arg1);
 				break;
@@ -38,8 +45,8 @@ public class Operation {
 					arg2 =temp;
 
 				}
-			calcAnswer=acos(arg1/arg2);
-			break;
+				calcAnswer=acos(arg1/arg2);
+				break;
 			case ASIN:
 				if(arg1>arg2)
 				{
@@ -68,10 +75,10 @@ public class Operation {
 			case FRACTION:
 				calcAnswer = 1 / arg1;
 				break;
-	        case NOOP:
-	        default:	
-	            calcAnswer = arg1;
-	    }
+			case NOOP:
+			default:
+				calcAnswer = arg1;
+		}
 		return calcAnswer;
 	}
 }
