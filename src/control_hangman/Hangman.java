@@ -1,3 +1,10 @@
+/*
+
+    Created by Michael Hayes
+    2020
+
+ */
+
 package control_hangman;
 
 import model_hangman.Phrase;
@@ -38,7 +45,12 @@ public class Hangman {
 
     public int getGuessesRemaining() { return this.guessesRemaining; }
 
-    public Phrase startNextRound() { return this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop())); } // when the game is over, a new phrase is create to guess
+    public void resetGuessesRemaining() { this.guessesRemaining = 5; }
+
+    public void startNextRound() { // when the game is over, a new phrase is created to guess
+        this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop()));
+        resetGuessesRemaining();
+    }
     /**
      * Checks if the guessed letter is one or more of the letters in the phrase;
      * @param letter
@@ -62,6 +74,7 @@ public class Hangman {
             guessesRemaining -= 1; // wrong letter guessed = one limb on the hangman
         }
     }
+
 
     /**
      * Generates a randomized stack by randomizing an index in the reference array list, pushing randomized phrase into stack,

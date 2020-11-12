@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Phrase {
-    String[] masterPhraseList = new String[]{"computer science a", "coronavirus pandemic", "intellij idea"}; // current "data"
 
     private char[] currentPhrase;
     private char[] displayedPhrase;

@@ -1,3 +1,10 @@
+/*
+
+    Created by Michael Hayes
+    2020
+
+ */
+
 package view_control;
 
 import control_hangman.Hangman;
