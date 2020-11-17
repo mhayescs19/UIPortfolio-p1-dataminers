@@ -31,7 +31,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 	}
 
 	// Writes to DestinationFile if not null; otherwise, prompts using View's method
-	private void SaveToFile(File DestinationFile) {
+	private boolean SaveToFile(File DestinationFile) {
 		boolean Success;
 		if (DestinationFile != null) {
 			Success = Model.WriteFile(DestinationFile, View.GetText());
@@ -41,7 +41,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 				OpenedFile = DestinationFile;
 				Success = Model.WriteFile(DestinationFile, View.GetText());
 			} else {
-				return;
+				return false;
 			}
 		}
 		if (!Success) {
@@ -50,28 +50,43 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 			TextChanged = false;
 			UpdateTitle();
 		}
+
+		return Success;
 	}
 
-	@Override
-	public void windowClosing(WindowEvent e) {
+	private void PromptExit(Runnable Function) {
 		if (TextChanged) {
 			// 0 = save, 1 = don't save, 2 = cancel
 			int Result = View.ChooseExitOption(OpenedFile == null ? "Untitled" : OpenedFile.getPath());
 			switch (Result) {
 				case 0:
-					SaveToFile(OpenedFile);
+					if (!SaveToFile(OpenedFile)) {
+						break;
+					}
 				case 1:
-					View.dispose();
+					Function.run();
 			}
 		} else {
-			View.dispose();
+			Function.run();
 		}
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		PromptExit(() -> View.dispose());
 	}
 
 	// Code for all menu items; connects View & Model
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
+			case "New" -> PromptExit(() -> {
+				OpenedFile = null;
+				View.SetText("");
+				TextChanged = false;
+				UpdateTitle();
+			});
+			case "New Window" -> new NotepadController(new NotepadModel(), new NotepadView());
 			case "Open" -> {
 				File SourceFile = View.ChooseFile("Open");
 				if (SourceFile != null) {
@@ -89,6 +104,7 @@ public class NotepadController extends WindowAdapter implements ActionListener, 
 			case "Save" -> SaveToFile(OpenedFile);
 			case "Save As" -> SaveToFile(null);
 			case "Exit" -> View.dispose();
+			case "Word Wrap" -> View.ToggleWordWrap();
 			case "Zoom In" -> View.ZoomIn();
 			case "Zoom Out" -> View.ZoomOut();
 			case "Restore Default Zoom" -> View.ResetZoom();
