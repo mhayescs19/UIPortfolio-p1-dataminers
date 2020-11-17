@@ -8,7 +8,11 @@
 * when possible create a new branch with new changes and merge via pull request to check compatibility
 
 ### Building Project in Intellij
-* Run from Intellij Build/Run or in NavigationMenu.java
+* Run from Intellij Build/Run <br>
+![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png)
+
+* or in NavigationMenu.java <br>
+![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunInCode.png)
 
 ## Launch Screen
 ![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/readme-test/statics/MenuUI.png) 
