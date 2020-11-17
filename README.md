@@ -10,7 +10,7 @@
 ### Building Project in Intellij
 * Run from Intellij Build/Run <br>
 ![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png)
-<img src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png" width="300" height="300"><br>
+<img src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png" width="296" height="64"><br>
 
 * or in NavigationMenu.java <br>
 ![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunInCode.png)
