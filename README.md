@@ -2,10 +2,12 @@
 ## How to Run
 ### Prereqs
 * Download Oracle Java JDK [HERE](http://jdk.java.net/)
-* Intellij installed on machine
+* Install Intellij on machine
+
 ### GitHub Practices
 * when possible create a new branch with new changes and merge via pull request to check compatibility
-## Building Project in Intellij
+
+### Building Project in Intellij
 * Run from Intellij Build/Run or in NavigationMenu.java
 
 ## Launch Screen
