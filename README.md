@@ -1,7 +1,10 @@
 # UIPortfolio-p1-dataminers
 ## How to Run
 * Run from Intellij Build/Run or in NavigationMenu.java
-* Navigation menu image: <a href="https://rtx.azurewebsites.net/6c8513f809acfe4b81a59eb7b6bea0c0.png">Link</a>. The menu is a hub with a file menu that opens our various programs.
+
+## Launch Screen
+![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/readme-test/statics/MenuUI.png) 
+The menu is a hub with a file menu that opens our various programs. Select menu item to launch to a program.
 ### Scrum Disscussion
 * Project Contributors (contrib, github, journal), combine group grade, put any longer documents (prereq files) inside of a separate README
 * Add supplemental images to describe how project files work
