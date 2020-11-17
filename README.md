@@ -1,5 +1,11 @@
 # UIPortfolio-p1-dataminers
 ## How to Run
+### Prereqs
+* Download Oracle Java JDK [HERE](http://jdk.java.net/)
+* Intellij installed on machine
+### GitHub Practices
+* when possible create a new branch with new changes and merge via pull request to check compatibility
+## Building Project in Intellij
 * Run from Intellij Build/Run or in NavigationMenu.java
 
 ## Launch Screen
@@ -10,6 +16,15 @@ The menu is a hub with a file menu that opens our various programs. Select menu 
 * Add supplemental images to describe how project files work
 * Assests folder to store images to embed
 * TODO or done
+
+## Project Contributors
+Contributor | GitHub Link | Focus |
+----------- | ----------- | ------------- |
+Dominic Phung | [@domph](https://github.com/domph) | |
+Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
+Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |  |
+Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
+David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
 
 ## Code Updates
 | Name | Code Blocks |
