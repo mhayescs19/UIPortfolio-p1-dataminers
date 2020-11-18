@@ -177,7 +177,7 @@ public class HangmanUI extends JFrame {
 
     private void updateHangmanVisual(Hangman control, JLabel hangmanDisplay) {
         int hangmanImageIndex = 5 - control.getGuessesRemaining(); // array size of image icons = 5, subtract current guesses remaining to get proper array index... possible place for stack use?
-        ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[hangmanImageIndex]);
+        ImageIcon currentHangmanState = new ImageIcon(getClass().getClassLoader().getResource(HangmanImage.filePath[hangmanImageIndex]));
         hangmanDisplay.setIcon(currentHangmanState);
     }
 

@@ -58,7 +58,7 @@ public class Phrase {
     }
 
     /**
-     * Deprecated
+     * @Deprecated
      */
     /*private String generateRandomPhrase() { // simple selection of a random phrase based on index
         Random randomizer = new Random();
