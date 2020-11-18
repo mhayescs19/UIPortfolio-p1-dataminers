@@ -176,9 +176,18 @@ public class HangmanUI extends JFrame {
     }
 
     private void updateHangmanVisual(Hangman control, JLabel hangmanDisplay) {
-        int hangmanImageIndex = 5 - control.getGuessesRemaining(); // array size of image icons = 5, subtract current guesses remaining to get proper array index... possible place for stack use?
-        ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[hangmanImageIndex]);
-        hangmanDisplay.setIcon(currentHangmanState);
+        int hangmanImageIndex = 6 - control.getGuessesRemaining(); // array size of image icons = 5, subtract current guesses remaining to get proper array index... possible place for stack use?
+
+        if (control.getGameOver() == false) {
+            ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[hangmanImageIndex]);
+            hangmanDisplay.setIcon(currentHangmanState);
+        } else { // visual updates and locking of interation to signal end of game
+            phraseLabel.setText("Game Over!");
+            ImageIcon currentHangmanState = new ImageIcon(HangmanImage.filePath[6]);
+            hangmanDisplay.setIcon(currentHangmanState);
+            disableButtons();
+        }
+
     }
 
     /**
@@ -203,6 +212,15 @@ public class HangmanUI extends JFrame {
         // updates visual of phrase in UI
         String updatedPhrase = control.getCurrentPhraseForDisplay();
         phraseLabel.setText(updatedPhrase);
+    }
+
+    /**
+     * Simple diable loop to eliminate any unhandled button input
+     */
+    private void disableButtons() {
+        for (JButton button : trackAlphabetButtons) {
+            button.setEnabled(true);
+        }
     }
 
 }

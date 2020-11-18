@@ -13,6 +13,83 @@ public class HangmanImage {
 
     static {
         filePath = new String[]{"src/images/hangman_initial.png", "src/images/hangman_guess1.png", "src/images/hangman_guess2.png", "src/images/hangman_guess3.png", "src/images/hangman_guess4.png", "src/images/hangman_guess5.png", "src/images/hangman_full.png"};
-        //"/images/hangman_initial.png", "/images/hangman_guess1.png", "/images/hangman_guess2.png", "/images/hangman_guess3.png", "/images/hangman_guess4.png", "/images/hangman_guess5.png", "/images/hangman_full.png"
+    }
+
+    static {
+        consoleArt = new String[][]{
+
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        "  |   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        " /    |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        " / \\  |  ",
+                        "      |  ",
+                        "=========",
+                },
+        };
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < consoleArt.length; i++) {
+            for (int j = 0; j < consoleArt[0].length; j++){
+                System.out.println(consoleArt[i][j]);
+            }
+        }
     }
 }
+
