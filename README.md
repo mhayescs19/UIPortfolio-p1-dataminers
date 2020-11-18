@@ -35,7 +35,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 ## Code Updates
 | Name | Code Blocks |
 |------- | ----------- |
-| Dominic |  |
+| Dominic | <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/tree/master/src/notepad">Notepad project folder</a> <br> <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/DominicCalculator.java">Calculator file</a> |
 | Andrew |  |
 | Jason |  |
 | Michael |  |
@@ -43,6 +43,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 
 ## Project Updates
 ### Notepad (Dominic)
+* Goal met: Converted to MVC
 * Goal met: Added new & new window file menu items
 * Goal met: Added Format > Word Wrap
 * Goal met: Binded buttons to hotkeys
