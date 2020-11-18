@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * This is the GUI version. It currently works, but there are some things I want to touch up.
+ * This is the GUI version.
  */
 
 public class TicTacGUI extends JPanel

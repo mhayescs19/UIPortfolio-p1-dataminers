@@ -2,7 +2,12 @@ package view_control;
 
 import java.util.Scanner;
 
+/**
+ * Short and sweet right now. planning to add more units.
+ */
+
 public class WeightConverter {
+
     public static void main(String[] args) {
 
         Scanner sc=new Scanner (System.in);

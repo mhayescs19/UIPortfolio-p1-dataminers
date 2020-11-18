@@ -1,15 +1,63 @@
 # UIPortfolio-p1-dataminers
 ## How to Run
-* Run from Intellij Build/Run or in NavigationMenu.java
-* Navigation menu image: <a href="https://rtx.azurewebsites.net/6c8513f809acfe4b81a59eb7b6bea0c0.png">Link</a>. The menu is a hub with a file menu that opens our various programs.
+### Prereqs
+* Download Oracle Java JDK [HERE](http://jdk.java.net/)
+* Install Intellij on machine
+
+### GitHub Practices
+* when possible create a new branch with new changes and merge via pull request to check compatibility
+
+### Building Project in Intellij
+* Run from Intellij Build/Run <br>
+<img src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png" width="268" height="58"><br>
+
+* or in NavigationMenu.java <br>
+<img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunInCode.png" width="600" height="274">
+
+## Launch Screen
+![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/readme-test/statics/MenuUI.png) 
+The menu is a hub with a file menu that opens our various programs. Select menu item to launch to a program.
 ### Scrum Disscussion
 * Project Contributors (contrib, github, journal), combine group grade, put any longer documents (prereq files) inside of a separate README
 * Add supplemental images to describe how project files work
 * Assests folder to store images to embed
 * TODO or done
 
-## Self-Grades
+## Project Contributors
+Contributor | GitHub Link | Focus |
+----------- | ----------- | ------------- |
+Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** |
+Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
+Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |  |
+Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
+David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
 
+## Code Updates
+| Name | Code Blocks |
+|------- | ----------- |
+| Dominic | <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/tree/master/src/notepad">Notepad project folder</a> <br> <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/DominicCalculator.java">Calculator file</a> |
+| Andrew |  |
+| Jason |  |
+| Michael |  |
+| David |  |
+
+## Project Updates
+### Notepad (Dominic)
+* Goal met: Converted to MVC
+* Goal met: Added new & new window file menu items
+* Goal met: Added Format > Word Wrap
+* Goal met: Binded buttons to hotkeys
+* Goal met: Implemented Ctrl + Mouse Wheel for zooming
+
+### Unit Converter (Jason)
+* 
+
+### Hangman Game (Michael) 
+* 
+
+# Update History
+
+## Week of October 30, 2020
 | Name | Self Grade (/20) | Scrum Leader Grade (/5) | Code Blocks |
 | ------------- | ----------- | ----------- | ----------- |
 |  Dominic ([domph](https://github.com/domph)) | 18/20 | 5/5 <br> ✓ achievement from week goals | - Met project goals for notepad project (see list of completed goals below). <br> &nbsp;&nbsp; - Image of new UI/functionality: <a href="https://rtx.azurewebsites.net/bb90765c0eb8b208bb0dadfaa98a61b4.png">Link</a> <br> &nbsp;&nbsp; - Code links: <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/NotepadGUI.java">NotepadGUI (where most of the changes occurred)</a>: some changes/additions include ZoomIn/ZoomOut functions, BottomPanel code and CreateBottomLabel function, window listener for window closing <br> &nbsp;&nbsp;&nbsp;&nbsp; - <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/notepad/FileManager.java">FileManager (small change)</a>  |
@@ -41,8 +89,6 @@
 * TODO: 
   * add different game states for replay (right now you can only guess one word)
   * need to add functionality to punish the player for wrong letter guesses
-
-# Update History
 
 ## Week of Ocotober 23, 2020
 * Michael (mhayescs19) 5/5 

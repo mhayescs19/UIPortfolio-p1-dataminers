@@ -4,10 +4,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -26,14 +23,17 @@ public class NotepadView extends JFrame {
 
 	//-- Data variables
 	private int ZoomValue = 100;
+	boolean IsCtrlDown = false;
 
 	//-- GUI Components
 	private JPanel MainPanel;
 	private JPanel BottomPanel;
 	private JTextArea TextInput;
+	private JScrollPane ScrollPane;
 	private JLabel ZoomPercentageLabel;
 	private JLabel CursorPositionLabel;
 	private JCheckBoxMenuItem StatusBarCheckBox;
+	private JCheckBoxMenuItem WordWrapCheckBox;
 	private ArrayList<JMenuItem> MenuItems = new ArrayList<>();
 	private JFileChooser FileChooser;
 
@@ -90,6 +90,10 @@ public class NotepadView extends JFrame {
 		BottomPanel.setVisible(StatusBarCheckBox.getState());
 	}
 
+	public void ToggleWordWrap() {
+		TextInput.setLineWrap(WordWrapCheckBox.getState());
+	}
+
 	// These are called in the Controller; provide connection between the two
 	public void AddGlobalActionListener(ActionListener AL) {
 		for (JMenuItem MenuItem : MenuItems) {
@@ -140,7 +144,7 @@ public class NotepadView extends JFrame {
 		TextInput.setBorder(BorderFactory.createCompoundBorder(TextInput.getBorder(), BorderFactory.createEmptyBorder(0, 2, 0, 2))); // 2 px padding for the text in the textarea
 		TextInput.setFont(new Font("Consolas", Font.PLAIN, DEFAULT_FONT_SIZE));	// Default - will be customizable soon
 
-		JScrollPane ScrollPane = new JScrollPane(TextInput, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		ScrollPane = new JScrollPane(TextInput, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		ScrollPane.setBorder(BorderFactory.createEmptyBorder());
 		MainPanel.add(ScrollPane);
 
@@ -155,7 +159,7 @@ public class NotepadView extends JFrame {
 		BottomPanel.add(Box.createHorizontalGlue());
 		add(BottomPanel, BorderLayout.PAGE_END);
 
-		CursorPositionLabel = CreateBottomLabel(200, "Ln 1, Col 1");
+		CursorPositionLabel = CreateBottomLabel(150, "Ln 1, Col 1");
 		ZoomPercentageLabel = CreateBottomLabel(50, "100%");
 
 		// Top (file menu) bar
@@ -164,21 +168,26 @@ public class NotepadView extends JFrame {
 		setJMenuBar(MenuBar);
 
 		JMenu FileMenu = CreateMenu(MenuBar, "File");
+		JMenu FormatMenu = CreateMenu(MenuBar, "Format");
 		JMenu ViewMenu = CreateMenu(MenuBar, "View");
 		JMenu ZoomTab = CreateMenu(ViewMenu, "Zoom");
 
-		// Add the various file menu items w/ keybinds if necessary
+		//-- Add the various file menu items w/ keybinds if necessary
+
+		// File menu
+		CreateMenuItem(FileMenu, "New", KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK, KeyEvent.VK_N, new int[][]{});
+		CreateMenuItem(FileMenu, "New Window", KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK, 0, new int[][]{});
 		CreateMenuItem(FileMenu, "Open", KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK, KeyEvent.VK_O, new int[][]{});
 		CreateMenuItem(FileMenu, "Save", KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK, KeyEvent.VK_S, new int[][]{});
 		CreateMenuItem(FileMenu, "Save As", KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK, 0, new int[][]{});
 		FileMenu.addSeparator();
 		CreateMenuItem(FileMenu, "Exit", 0, 0, 0, new int[][]{});
 
-		// Special menu item (checkbox); does not use the standard function
-		StatusBarCheckBox = new JCheckBoxMenuItem("Status Bar");
-		StatusBarCheckBox.setState(true);
-		MenuItems.add(StatusBarCheckBox);
-		ViewMenu.add(StatusBarCheckBox);
+		// Format menu
+		WordWrapCheckBox = CreateCheckBoxMenuItem(FormatMenu, "Word Wrap", false);
+
+		// View menu
+		StatusBarCheckBox = CreateCheckBoxMenuItem(ViewMenu, "Status Bar", true);
 
 		CreateMenuItem(ZoomTab, "Zoom In", KeyEvent.VK_PLUS, KeyEvent.CTRL_DOWN_MASK, 0, new int[][]{{KeyEvent.VK_ADD, KeyEvent.CTRL_DOWN_MASK}});
 		CreateMenuItem(ZoomTab, "Zoom Out", KeyEvent.VK_MINUS, KeyEvent.CTRL_DOWN_MASK, 0, new int[][]{{KeyEvent.VK_SUBTRACT, KeyEvent.CTRL_DOWN_MASK}});
@@ -196,6 +205,14 @@ public class NotepadView extends JFrame {
 			return null;
 		}
 		return NewMenu;
+	}
+
+	private JCheckBoxMenuItem CreateCheckBoxMenuItem(JMenu Parent, String Name, boolean InitialState) {
+		JCheckBoxMenuItem NewCheckBox = new JCheckBoxMenuItem(Name);
+		NewCheckBox.setState(InitialState);
+		MenuItems.add(NewCheckBox);
+		Parent.add(NewCheckBox);
+		return NewCheckBox;
 	}
 
 	// KeyShortcut & Modifiers are optional parameters to specify the main keybinds (these show up in the file menu item); AdditionalShortcuts can be provided -- these are not the ones shown up in the file menu item though
@@ -240,6 +257,7 @@ public class NotepadView extends JFrame {
 
 	// Listeners independent of Model/Control (aka View only)
 	private void AddViewListeners() {
+		// Tracks line and cursor position for bottom stats
 		TextInput.addCaretListener(e -> {
 			int CaretPosition = e.getDot();
 			try {
@@ -249,6 +267,33 @@ public class NotepadView extends JFrame {
 				Column += 1;
 				CursorPositionLabel.setText("Ln " + Line + ", Col " + Column);
 			} catch (Exception ignore) { }
+		});
+
+		// Allows scroll zoom in/out
+		TextInput.addMouseWheelListener(e -> {
+			int Notches = e.getWheelRotation();
+			if (IsCtrlDown) {
+				if (Notches > 0) {
+					ZoomOut();
+				} else if (Notches < 0) {
+					ZoomIn();
+				}
+			} else {
+				ScrollPane.dispatchEvent(e);
+			}
+		});
+
+		// Track if ctrl is down (used for scroll zoom/in)
+		TextInput.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				IsCtrlDown = e.isControlDown();
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				IsCtrlDown = e.isControlDown();
+			}
 		});
 	}
 }
