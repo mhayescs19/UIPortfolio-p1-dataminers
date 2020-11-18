@@ -1,6 +1,18 @@
 # UIPortfolio-p1-dataminers
 ## How to Run
-* Run from Intellij Build/Run or in NavigationMenu.java
+### Prereqs
+* Download Oracle Java JDK [HERE](http://jdk.java.net/)
+* Install Intellij on machine
+
+### GitHub Practices
+* when possible create a new branch with new changes and merge via pull request to check compatibility
+
+### Building Project in Intellij
+* Run from Intellij Build/Run <br>
+<img src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunAnywhere.png" width="268" height="58"><br>
+
+* or in NavigationMenu.java <br>
+<img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/intellijRunInCode.png" width="600" height="274">
 
 ## Launch Screen
 ![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/readme-test/statics/MenuUI.png) 
@@ -11,10 +23,19 @@ The menu is a hub with a file menu that opens our various programs. Select menu 
 * Assests folder to store images to embed
 * TODO or done
 
+## Project Contributors
+Contributor | GitHub Link | Focus |
+----------- | ----------- | ------------- |
+Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** |
+Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
+Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |  |
+Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
+David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
+
 ## Code Updates
 | Name | Code Blocks |
 |------- | ----------- |
-| Dominic |  |
+| Dominic | <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/tree/master/src/notepad">Notepad project folder</a> <br> <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/DominicCalculator.java">Calculator file</a> |
 | Andrew |  |
 | Jason |  |
 | Michael |  |
@@ -22,7 +43,11 @@ The menu is a hub with a file menu that opens our various programs. Select menu 
 
 ## Project Updates
 ### Notepad (Dominic)
-* 
+* Goal met: Converted to MVC
+* Goal met: Added new & new window file menu items
+* Goal met: Added Format > Word Wrap
+* Goal met: Binded buttons to hotkeys
+* Goal met: Implemented Ctrl + Mouse Wheel for zooming
 
 ### Unit Converter (Jason)
 * 
