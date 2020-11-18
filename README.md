@@ -26,7 +26,7 @@ The menu is a hub with a file menu that opens our various programs. Select menu 
 ## Project Contributors
 Contributor | GitHub Link | Focus |
 ----------- | ----------- | ------------- |
-Dominic Phung | [@domph](https://github.com/domph) | |
+Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** |
 Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
 Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |  |
 Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
@@ -43,7 +43,10 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 
 ## Project Updates
 ### Notepad (Dominic)
-* 
+* Goal met: Added new & new window file menu items
+* Goal met: Added Format > Word Wrap
+* Goal met: Binded buttons to hotkeys
+* Goal met: Implemented Ctrl + Mouse Wheel for zooming
 
 ### Unit Converter (Jason)
 * 
