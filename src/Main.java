@@ -1,3 +1,4 @@
+import util.PrintyShortcuts;
 import view_control.NavigationMenu;
 import javax.swing.*;
 

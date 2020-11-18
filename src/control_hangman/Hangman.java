@@ -11,6 +11,7 @@ import model_hangman.Phrase;
 import model_linkedlists.Stack;
 import util.HangmanPhrases;
 import util.PrintyShortcuts;
+import view_control.HangmanConsole;
 import view_control.HangmanUI;
 
 import java.util.ArrayList;
@@ -20,8 +21,11 @@ public class Hangman {
 
     public Phrase model;
     public HangmanUI view;
+    public HangmanConsole console;
 
     private int guessesRemaining; // counter to limit number of guesses for word
+    private boolean gameOver; // boolean that is changed once the user runs out of guesses
+    private boolean correctlyGuessedPhrase; // boolean to check if entire phrase is correct
     private ArrayList<String> masterPhraseList = new HangmanPhrases().masterPhraseList; // copies phrase list into control
     private Stack randomizedPhraseStack = new Stack();
 
@@ -34,23 +38,38 @@ public class Hangman {
 
         this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop())); // pops off top of stack into phrase
         this.view = new HangmanUI(this);
+        //this.console = new HangmanConsole(this);
         view.setVisible(true);
 
-        guessesRemaining = 5; // 6 guesses per round in non zero based counting
+        this.guessesRemaining = 6; // 7 guesses per round in non zero based counting
+        this.correctlyGuessedPhrase = false;
+        this.gameOver = false;
     }
 
     public String getCurrentPhraseForDisplay() { return PrintyShortcuts.charToString(this.model.getPhraseWithBlanks()); }
 
     public boolean getPhraseState() { return model.getPhraseUpdated(); } // returns display ready phrase updated based on previous guess
 
-    public int getGuessesRemaining() { return this.guessesRemaining; }
+    public int getGuessesRemaining() { return this.guessesRemaining; } // return number of guesses to control hangman art (console or in GUI)
+
+    public boolean getPhraseAccuracy() { return this.correctlyGuessedPhrase; } // returns boolean to determine if the user correctly guessed the phrase
+
+    public boolean getGameOver() { return this.gameOver; } // returns boolean either that the game is continuing or it is over
 
     public void resetGuessesRemaining() { this.guessesRemaining = 5; }
 
+    /**
+     * Starts a new round by creating a fresh new Phrase object
+     */
     public void startNextRound() { // when the game is over, a new phrase is created to guess
         this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop()));
-        resetGuessesRemaining();
+
+        // resets control variables
+        this.guessesRemaining = 6; // 6 guesses per round in non zero based counting
+        this.correctlyGuessedPhrase = false;
+        this.gameOver = false;
     }
+
     /**
      * Checks if the guessed letter is one or more of the letters in the phrase;
      * @param letter
@@ -70,18 +89,32 @@ public class Hangman {
         boolean phraseUpdated = model.getPhraseUpdated(); // assignment to local variable for clarity
         if (phraseUpdated == true) { // simple catch to avoid unnecessarily updating the blank phrase
             model.updatePhraseWithBlanks(phraseWithBlanks); // updates current model phrase with blanks to include correctly guess letters
+            checkEntirePhraseAccuracy(); // checks guessed phrase to entire reference phrase to see if they match
         } else {
-            guessesRemaining -= 1; // wrong letter guessed = one limb on the hangman
+            this.guessesRemaining -= 1; // wrong letter guessed = one limb on the hangman
+            if (this.guessesRemaining == 0) {
+                this.gameOver = true;
+            }
         }
     }
 
+    /**
+     * Simple check to test if the phrase guessed is the same as the reference phrase
+     */
+    private void checkEntirePhraseAccuracy() {
+        // pulls current phrase that the user guessed and the entire reference phrase that the user is guessing
+        char[] referencePhrase = model.getRandomPhrase();
+        char[] currentPhrase = model.getPhraseWithBlanks();
+        if (currentPhrase.equals(referencePhrase)) {
+            this.correctlyGuessedPhrase = true;
+        }
+    }
 
     /**
      * Generates a randomized stack by randomizing an index in the reference array list, pushing randomized phrase into stack,
      * then deleting element in array list that was just pushed
      */
-    public void generatePhraseStack()
-    {
+    public void generatePhraseStack() {
         Random randomizer = new Random();
         while (masterPhraseList.size() != 0){ // repeats process as long as there are elements in the array list
             int bound = masterPhraseList.size();
