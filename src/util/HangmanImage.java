@@ -13,6 +13,71 @@ public class HangmanImage {
 
     static {
         filePath = new String[]{"hangman_initial.png", "hangman_guess1.png", "hangman_guess2.png", "hangman_guess3.png", "hangman_guess4.png", "images/hangman_guess5.png", "images/hangman_full.png"};
-        //"/images/hangman_initial.png", "/images/hangman_guess1.png", "/images/hangman_guess2.png", "/images/hangman_guess3.png", "/images/hangman_guess4.png", "/images/hangman_guess5.png", "/images/hangman_full.png"
+        consoleArt = new String[][]{
+
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        "  |   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|   |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        "      |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        " /    |  ",
+                        "      |  ",
+                        "=========",
+                },
+                {
+                        "  *---*  ",
+                        "  |   |  ",
+                        "  0   |  ",
+                        " /|\\  |  ",
+                        " / \\  |  ",
+                        "      |  ",
+                        "=========",
+                },
+        };
     }
 }
