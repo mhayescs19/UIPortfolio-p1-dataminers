@@ -23,7 +23,7 @@ Contributor | GitHub Link | Focus in Project & Navigation to Demo via Menu |
 ----------- | ----------- | ------------- |
 Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** |
 Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
-Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |  |
+Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |Pair Share -> Chang, Phung, Ramsayer -> **Converters**   |
 Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
 David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
 
@@ -45,7 +45,8 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 * Goal met: Implemented Ctrl + Mouse Wheel for zooming
 
 ### Unit Converter (Jason)
-* 
+* Goal met: Made a semi-decent hub(could be better in my opinion
+
 
 ### Hangman Game (Michael) 
 * Major goal met:
