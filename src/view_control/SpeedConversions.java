@@ -194,6 +194,7 @@ public class SpeedConversions extends UIBase {
         public SpeedConversions(){
             //Let's you focus on certain object(let's key listener work)
             setFocusable(true);
+            //sets a key listener for getting key inputs
             addKeyListener(new KeyAdapter() {
                 @Override
                 public void keyPressed(KeyEvent e) {
