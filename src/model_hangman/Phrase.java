@@ -18,8 +18,8 @@ public class Phrase {
     public Phrase(String phrase) { // when the game starts there always needs to be a phrase to guess
         createPhrase(phrase);
         createPhraseWithBlanks();
-        PrintyShortcuts.println(PrintyShortcuts.charToString(currentPhrase));
-        PrintyShortcuts.println(PrintyShortcuts.charToString(displayedPhrase));
+        //PrintyShortcuts.println(PrintyShortcuts.charToString(currentPhrase));
+        //PrintyShortcuts.println(PrintyShortcuts.charToString(displayedPhrase));
     }
 
     public void createPhrase(String phrase) { // pulls random phrase from master array into a char array

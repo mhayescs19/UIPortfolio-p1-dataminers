@@ -23,11 +23,14 @@ public class Hangman {
     public HangmanUI view;
     public HangmanConsole console;
 
+    private enum STATE {UI, CONSOLE}
+
     private int guessesRemaining; // counter to limit number of guesses for word
     private boolean gameOver; // boolean that is changed once the user runs out of guesses
     private boolean correctlyGuessedPhrase; // boolean to check if entire phrase is correct
     private ArrayList<String> masterPhraseList = new HangmanPhrases().masterPhraseList; // copies phrase list into control
     private Stack randomizedPhraseStack = new Stack();
+
 
     /**
      * Control file constructor acts as a driver... activates model and view,
@@ -37,8 +40,8 @@ public class Hangman {
         generatePhraseStack();
 
         this.model = new Phrase(String.valueOf(randomizedPhraseStack.pop())); // pops off top of stack into phrase
+
         this.view = new HangmanUI(this);
-        //this.console = new HangmanConsole(this);
         view.setVisible(true);
 
         this.guessesRemaining = 6; // 7 guesses per round in non zero based counting
@@ -56,7 +59,7 @@ public class Hangman {
 
     public boolean getGameOver() { return this.gameOver; } // returns boolean either that the game is continuing or it is over
 
-    public void resetGuessesRemaining() { this.guessesRemaining = 5; }
+    public void activateConsole() { this.console = new HangmanConsole(this); } // "connects" control to HangmanConsole through callbacks
 
     /**
      * Starts a new round by creating a fresh new Phrase object
@@ -103,8 +106,8 @@ public class Hangman {
      */
     private void checkEntirePhraseAccuracy() {
         // pulls current phrase that the user guessed and the entire reference phrase that the user is guessing
-        char[] referencePhrase = model.getRandomPhrase();
-        char[] currentPhrase = model.getPhraseWithBlanks();
+        String referencePhrase = new String (model.getRandomPhrase()).toUpperCase();
+        String currentPhrase = new String(model.getPhraseWithBlanks()).toUpperCase();
         if (currentPhrase.equals(referencePhrase)) {
             this.correctlyGuessedPhrase = true;
         }
