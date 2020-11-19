@@ -135,7 +135,7 @@ public class HangmanUI extends JFrame {
          * Image Display
          * 1. JLabel manages display of hangman states (more limbs as user guesses more wrong)
          */
-        ImageIcon image = new ImageIcon("src/images/hangman_initial.png");
+        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource(HangmanImage.filePath[0]));
         hangmanDisplay = new JLabel(image);
         hangmanDisplay.setBounds(-10, -2, 400, 600);
         hangmanFrame.add(hangmanDisplay);
@@ -254,7 +254,7 @@ public class HangmanUI extends JFrame {
             button.setEnabled(true);
         }
         // resets image display
-        ImageIcon image = new ImageIcon("src/images/hangman_initial.png");
+        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource(HangmanImage.filePath[0]));
         hangmanDisplay.setIcon(image);
         // fires off code in MVC to set up new phrase
         control.startNextRound();
