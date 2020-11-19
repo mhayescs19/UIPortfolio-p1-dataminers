@@ -17,14 +17,9 @@
 ## Launch Screen
 ![](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/readme-test/statics/MenuUI.png) 
 The menu is a hub with a file menu that opens our various programs. Select menu item to launch to a program.
-### Scrum Disscussion
-* Project Contributors (contrib, github, journal), combine group grade, put any longer documents (prereq files) inside of a separate README
-* Add supplemental images to describe how project files work
-* Assests folder to store images to embed
-* TODO or done
 
 ## Project Contributors
-Contributor | GitHub Link | Focus |
+Contributor | GitHub Link | Focus in Project & Navigation to Demo via Menu |
 ----------- | ----------- | ------------- |
 Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** |
 Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
@@ -38,7 +33,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 | Dominic | <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/tree/master/src/notepad">Notepad project folder</a> <br> <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/DominicCalculator.java">Calculator file</a> |
 | Andrew |  |
 | Jason |  |
-| Michael |  |
+| Michael | - [Main driver of HangmanConsole.java](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L36) <br> - [Activation of console in control (triggered by GUI button)](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/control_hangman/Hangman.java#L62)<br> - Using game state booleans in both GUI and console[GUI](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanUI.java#L224), [Console](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L67)|
 | David |  |
 
 ## Project Updates
@@ -53,9 +48,17 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 * 
 
 ### Hangman Game (Michael) 
-* 
+* Major goal met:
+  * Created alternative view for hangman using same control and model
+  * See control line directories at the top of each the view files (HangmanUI.java and HangmanControl.java) for other specific areas of where control is used
+* Added end of round functionality in control - game over (player did not guess the phrase correctly) and success (player guessed the phrase)
 
 # Update History
+### Scrum Disscussion
+* Project Contributors (contrib, github, journal), combine group grade, put any longer documents (prereq files) inside of a separate README
+* Add supplemental images to describe how project files work
+* Assests folder to store images to embed
+* TODO or done
 
 ## Week of October 30, 2020
 | Name | Self Grade (/20) | Scrum Leader Grade (/5) | Code Blocks |
