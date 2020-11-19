@@ -34,13 +34,23 @@ public class HangmanUI extends JFrame {
             }
         });
     }
+    /**
+     * CONTROL COMMENT DIRECTORY!
+     * line 115
+     * line 157
+     * line 181
+     * line 209 method updateHangmanVisual
+     * line 230 method prepareForNewPhrase
+     */
 
     /**
      * Real definitions
      */
-    private JLabel phraseLabel = new JLabel();
+    private JLabel phraseLabel;
     private JLabel hangmanDisplay;
     private JButton[] trackAlphabetButtons = new JButton[26];
+
+    private JButton button_newPhrase;
 
 
     public HangmanUI(Hangman control) {
@@ -48,6 +58,7 @@ public class HangmanUI extends JFrame {
          * Creates frame
          */
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
         setBounds(100, 100, 900, 600);
         getContentPane().setLayout(null); // code declaration equivalent to GUI form layout
         Container hangmanFrame = getContentPane();
@@ -104,7 +115,7 @@ public class HangmanUI extends JFrame {
             new_button.setBackground(Color.WHITE);
             new_button.addActionListener(e -> {
                 char currentLetter = new_button.getText().toLowerCase().charAt(0);
-                System.out.println(currentLetter);
+                //System.out.println(currentLetter);
                 control.checkLetter(currentLetter);
                 // visual text update of phrase
                 String updatedPhrase = control.getCurrentPhraseForDisplay();
@@ -129,7 +140,7 @@ public class HangmanUI extends JFrame {
         hangmanDisplay.setBounds(-10, -2, 400, 600);
         hangmanFrame.add(hangmanDisplay);
 
-        JButton button_newPhrase = new JButton("New Phrase"); // text displayed on button
+        button_newPhrase = new JButton("New Phrase"); // text displayed on button
         button_newPhrase.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -148,9 +159,34 @@ public class HangmanUI extends JFrame {
         button_newPhrase.setBackground(Color.WHITE);
         button_newPhrase.addActionListener(e -> {
             prepareForNewPhrase(control); // clean reset of UI
+            button_newPhrase.setVisible(false); // hides button so user can only guess a new phrase after they have either lost or won
         });
         button_newPhrase.setBounds(600, 350, 100, 20);
         hangmanFrame.add(button_newPhrase);
+        button_newPhrase.setVisible(false);
+
+        JButton button_console = new JButton("Console"); // text displayed on button
+        button_newPhrase.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                button_console.setBackground(Color.decode("#9E9E9E"));
+            } // change color to get an interaction
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                button_console.setBackground(Color.WHITE);
+            }
+        });
+        button_console.setBorder(new MatteBorder(1, 1, 1, 1, Color.decode("#9DAF9B")));
+        button_console.setOpaque(true);
+        button_console.setForeground(Color.decode("#2B425B"));
+        button_console.setFont(new Font("Gilroy-ExtraBold", Font.PLAIN, 14));
+        button_console.setBackground(Color.WHITE);
+        button_console.addActionListener(e -> {
+            control.activateConsole(); // activates console via control
+        });
+        button_console.setBounds(600, 320, 100, 20);
+        hangmanFrame.add(button_console);
     }
 
     /**
@@ -175,11 +211,17 @@ public class HangmanUI extends JFrame {
 
     }
 
+    /**
+     * Updates hangman image
+     * Also tests if the game is over and if the user is victorious
+     * @param control
+     * @param hangmanDisplay
+     */
     private void updateHangmanVisual(Hangman control, JLabel hangmanDisplay) {
 
         int hangmanImageIndex = 6 - control.getGuessesRemaining(); // array size of image icons = 5, subtract current guesses remaining to get proper array index... possible place for stack use?
 
-        if (control.getGameOver() == false) {
+        if (control.getGameOver() == false) { // if the user has not run out of guesses, present next body part on hangman
             ImageIcon currentHangmanState = new ImageIcon(getClass().getClassLoader().getResource(HangmanImage.filePath[hangmanImageIndex]));
             hangmanDisplay.setIcon(currentHangmanState);
         } else { // visual updates and locking of interation to signal end of game
@@ -187,6 +229,12 @@ public class HangmanUI extends JFrame {
             ImageIcon currentHangmanState = new ImageIcon(getClass().getClassLoader().getResource(HangmanImage.filePath[6]));
             hangmanDisplay.setIcon(currentHangmanState);
             disableButtons();
+            button_newPhrase.setVisible(true);
+
+        }
+        if (control.getPhraseAccuracy() == true) { // if the user has accurately guessed the phrase, let them know!
+            phraseLabel.setText("Correct!");
+            button_newPhrase.setVisible((true)); // allows user to continue game by guessing another phrase
         }
 
     }
