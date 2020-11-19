@@ -33,7 +33,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 | Dominic | <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/tree/master/src/notepad">Notepad project folder</a> <br> <a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/DominicCalculator.java">Calculator file</a> |
 | Andrew |  |
 | Jason |  |
-| Michael | - [Main driver of HangmanConsole.java](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L36) <br> - [Activation of console in control (triggered by GUI button)](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/control_hangman/Hangman.java#L62)<br> - Using game state booleans in both GUI and console[GUI](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanUI.java#L224), [Console](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L67)|
+| Michael | - [Main driver of HangmanConsole.java](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L36) <br> - [Activation of console in control (triggered by GUI button)](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/control_hangman/Hangman.java#L62)<br> - Using game state booleans in both GUI and console: [GUI](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanUI.java#L224), [Console](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L67)|
 | David |  |
 
 ## Project Updates
