@@ -39,7 +39,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 ## Project Updates
 ### Notepad (Dominic)
 * Goal met: Converted to MVC
-<img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/NotepadMVC.png" width="597" height="269">
+<img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/NotepadMVC.PNG" width="597" height="269">
 Note: The lines from the MVCNotepad class are because that file creates instances of all three classes (it isn't part of the MVC process)
 * Goal met: Added new & new window file menu items
 * Goal met: Added Format > Word Wrap
