@@ -50,9 +50,11 @@ Note: The lines from the MVCNotepad class are because that file creates instance
 * Goal met: Made a semi-decent hub(could be better in my opinion
 
 
-### Hangman Game (Michael) 
+### Hangman Game (Michael)
 * Major goal met:
-  * Created alternative view for hangman using same control and model
+  * Created alternative view for hangman using same control and model (photos do not depict simultaneously output to views, just duplicate representations in JFrame and console) <br>
+  <img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/hangmanViewJFrame.png" width="332" height="220">   <img class="one" src="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/statics/hangmanViewConsole.png" width="445.14" height="220">
+
   * See control line directories at the top of each the view files (HangmanUI.java and HangmanControl.java) for other specific areas of where control is used
 * Added end of round functionality in control - game over (player did not guess the phrase correctly) and success (player guessed the phrase)
 
