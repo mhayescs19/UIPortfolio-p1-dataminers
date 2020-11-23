@@ -25,7 +25,7 @@ Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pa
 Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |Demos -> **Unit Converter** |
 Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |Pair Share -> Chang, Phung, Ramsayer -> **Converters**   |
 Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
-David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
+David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) | N/A? | 
 
 ## Code Updates
 | Name | Code Blocks |
@@ -34,7 +34,7 @@ David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  |
 | Andrew |https://github.com/andrewcomputsci2019/Library/tree/master/src</a> Side project(you can look through it if you want its a fair amount of code)|
 | Jason | -<a href="https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/UnitConversion/src/view_control/ConverterHub.java"> Converter Hub(Can access all of the converters from here</a> <br> |
 | Michael | - [Main driver of HangmanConsole.java](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L36) <br> - [Activation of console in control (triggered by GUI button)](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/control_hangman/Hangman.java#L62)<br> - Using game state booleans in both GUI and console: [GUI](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanUI.java#L224), [Console](https://github.com/mhayescs19/UIPortfolio-p1-dataminers/blob/master/src/view_control/HangmanConsole.java#L67)|
-| David |  |
+| David | N/A? |
 
 ## Project Updates
 ### Notepad (Dominic)
