@@ -22,7 +22,7 @@ The menu is a hub with a file menu that opens our various programs. Select menu 
 Contributor | GitHub Link | Focus in Project & Navigation to Demo via Menu |
 ----------- | ----------- | ------------- |
 Dominic Phung | [@domph](https://github.com/domph) | Demos -> **Notepad** <br>Pair Share -> Chang, Phung, Ramsayer -> **Dominic's Calculator** (individual project) |
-Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |  |
+Andrew Pegg | [@andrewcomputsci2019](https://github.com/andrewcomputsci2019) |Demos -> **Unit Converter** |
 Jason Chang | [@Dragon0344](https://github.com/Dragon0344) |Pair Share -> Chang, Phung, Ramsayer -> **Converters**   |
 Michael Hayes | [@mhayescs19](https://github.com/mhayescs19) | Demos -> **Hangman** <br>Pair Share -> Pegg, Hayes -> **Calculator** |
 David Ramsayer | [@davidramsayer](https://github.com/davidramsayer) |  | 
